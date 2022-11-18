@@ -2,34 +2,18 @@
 	import {
 		Board,
 		coordsEqual,
+		createBoardFromString,
 		GridType,
 		HexagonalBoard,
 		PieceType,
 		RectangularBoard,
+		type HexagonalSpace,
 		type Space
 	} from '$lib/puzzle/Board';
-	import { puzzles } from '$lib/puzzle/PuzzleList';
 	import { confetti } from '@neoconfetti/svelte';
 
-	console.log(puzzles);
-
-	let board = new HexagonalBoard(5, 3, true);
-	board.addPiece({ a: 0, r: 0, c: 0 }, PieceType.Pig);
-	board.addPiece({ a: 0, r: 0, c: 2 }, PieceType.Pig);
-	board.addPiece({ a: 1, r: 0, c: 4 }, PieceType.Pig);
-	board.addPiece({ a: 0, r: 0, c: 4 }, PieceType.Home);
-	board.addPiece({ a: 0, r: 2, c: 2 }, PieceType.Person);
-	board.addPiece({ a: 0, r: 1, c: 3 }, PieceType.Person);
-	//board.addPiece({ a: 1, r: 1, c: 2 }, PieceType.Empty);
-
-	// let board = new RectangularBoard(5, 5);
-	// board.addPiece({ x: 0, y: 0 }, PieceType.Pig);
-	// board.addPiece({ x: 3, y: 1 }, PieceType.Pig);
-	// board.addPiece({ x: 0, y: 4 }, PieceType.Pig);
-	// board.addPiece({ x: 4, y: 0 }, PieceType.Pig);
-	// board.addPiece({ x: 4, y: 4 }, PieceType.Person);
-	// board.addPiece({ x: 2, y: 2 }, PieceType.Person);
-	// board.addPiece({ x: 2, y: 3 }, PieceType.Home);
+	export let puzzleString: string;
+	let board = createBoardFromString(puzzleString);
 
 	let activeCell: { space: Space; button: HTMLButtonElement } | undefined;
 	let destinations: Space[] = [];
@@ -46,7 +30,9 @@
 
 	async function clickSpace(space: Space, button: HTMLButtonElement) {
 		if (lastDestination) {
-			const validMoves = board.getValidMovesFrom(lastDestination.coords as any);
+			const validMoves: { destination: Space; puller: Space }[] = board.getValidMovesFrom(
+				lastDestination.coords as any
+			);
 			const matchingMove = validMoves.find((move) =>
 				coordsEqual(move.destination.coords, space.coords)
 			);
@@ -263,8 +249,6 @@
 	}
 </script>
 
-<div>There should be a hexagon here</div>
-
 <div class="board" bind:this={boardNode}>
 	{#each board.spaces as space}
 		<button
@@ -304,12 +288,6 @@
 </div>
 
 <style>
-	/**
-        steps to movement animation:
-        1. stretch out rope from moving piece to pulling piece
-        2. move piece to new location while shortening rope
-        3. remove rope
-    */
 	.cell {
 		background-color: #ccc;
 		position: absolute;
@@ -351,12 +329,10 @@
 	}
 
 	.board {
-		position: absolute;
-		width: 90vmin;
-		height: 90vmin;
-		left: 5vmin;
-		top: 5vmin;
-		background-color: #fff;
+		margin: 0 auto;
+		width: calc(100vmin - 160px);
+		height: calc(100vmin - 160px);
+		position: relative;
 	}
 
 	img {
@@ -375,8 +351,11 @@
 	}
 
 	.actions {
-		position: absolute;
-		bottom: 5vmin;
-		left: 5vmin;
+		flex: 1;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 16px;
+		align-items: center;
 	}
 </style>

@@ -86,7 +86,10 @@ export class RectangularBoard extends Board {
     getTopOffset(): number {
         return (100 - this.getSpaceSize() * this.height) / 2;
     }
-    getCoordsCSS(coords: RectangularCoords): string {
+    getCoordsCSS(coords: Coords): string {
+        if (!("x" in coords)) {
+            throw new Error("Invalid coords");
+        }
         const spaceSize = this.getSpaceSize();
         const left = this.getLeftOffset() + coords.x * spaceSize;
         const top = this.getTopOffset() + coords.y * spaceSize;
@@ -179,7 +182,10 @@ export class HexagonalBoard extends Board {
         return (100 - (spaceSize * (this.height + (this.hasOddRow ? -0.4 : 0.1)) * SQRT_3)) / 2;
     }
 
-    getCoordsCSS(coords: HexagonalCoords): string {
+    getCoordsCSS(coords: Coords): string {
+        if (!("a" in coords)) {
+            throw new Error("Invalid coords");
+        }
         const { a, r, c } = coords;
         const spaceSize = this.getSpaceSize();
         const leftOffset = this.getLeftOffset();
@@ -257,7 +263,7 @@ function serialize(width: number, height: number, hasOddRow: boolean, spaces: Sp
         if (pieceType === PieceType.Empty) return 'E';
         if (pieceType === PieceType.Person) return 'P';
         if (pieceType === PieceType.Pig) return 'O';
-        if (pieceType === PieceType.Home) return 'W';
+        if (pieceType === PieceType.Home) return 'H';
         return "_";
     }).join('')}`;
 }
@@ -271,10 +277,19 @@ function deserialize(object: HexagonalBoard | RectangularBoard, string: string) 
         if (c === 'E') space.pieceType = PieceType.Empty;
         else if (c === 'P') space.pieceType = PieceType.Person;
         else if (c === 'O') space.pieceType = PieceType.Pig;
-        else if (c === 'W') space.pieceType = PieceType.Home;
+        else if (c === 'H') space.pieceType = PieceType.Home;
         else space.pieceType = null;
     }
     return board;
+}
+
+export function createBoardFromString(serialized: string) {
+    if (serialized.includes("~")) {
+        serialized = serialized.split("~")[1];
+    }
+    const type = serialized[0];
+    const board = type === 'R' ? new RectangularBoard(0, 0) : new HexagonalBoard(0, 0, false);
+    return board.deserialize(serialized.slice(1));
 }
 
 export function coordsEqual(a: Coords | undefined, b: Coords | undefined): boolean {
