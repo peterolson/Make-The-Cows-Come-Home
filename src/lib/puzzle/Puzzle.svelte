@@ -278,14 +278,24 @@
 			{/if}
 		</button>
 	{/each}
-	{#if board.isSolved()}
+	{#if board.isSolved() && !isAnimating}
 		<div
 			style="position: absolute; left: 50%; top: 0%"
 			use:confetti={{
 				force: 0.4,
-				stageWidth: boardNode.offsetWidth,
-				stageHeight: boardNode.offsetHeight,
-				colors: ['#ff3e00', '#40b3ff', '#676778']
+				duration: 4000,
+				stageWidth: document.body.offsetWidth,
+				stageHeight: document.body.offsetHeight,
+				colors: [
+					'#ff0a12',
+					'#ff7300',
+					'#fffb00',
+					'#90fe00',
+					'#00fff7',
+					'#0015ff',
+					'#8400ff',
+					'#ff00a1'
+				]
 			}}
 		/>
 	{/if}
@@ -299,12 +309,12 @@
 
 <style>
 	.cell {
-		background-color: #ccc;
+		background-color: #eee;
 		position: absolute;
 		transition: background-color 0.5s;
 	}
 	.cell:hover {
-		background-color: #aaa;
+		background-color: #ddd;
 	}
 
 	.hexagon {

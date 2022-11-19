@@ -33,6 +33,7 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
+		overflow: hidden;
 	}
 	.header {
 		height: 80px;
