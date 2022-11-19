@@ -3,10 +3,11 @@
 </script>
 
 <svelte:head>
-	<title>Puzzle</title>
+	<title>Make the cows come home</title>
 	<meta name="description" content="Puzzle game" />
 </svelte:head>
 
+<h1>Make the cows come home</h1>
 {#each difficulties as difficulty}
 	<div>
 		<a href="/{difficulty.key}">{difficulty.name}</a>
