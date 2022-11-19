@@ -1,13 +1,9 @@
 <script lang="ts">
 	import {
-		Board,
 		coordsEqual,
 		createBoardFromString,
 		GridType,
-		HexagonalBoard,
 		PieceType,
-		RectangularBoard,
-		type HexagonalSpace,
 		type Space
 	} from '$lib/puzzle/Board';
 	import { confetti } from '@neoconfetti/svelte';
@@ -22,11 +18,8 @@
 	let boardNode: HTMLDivElement;
 	let lastDestination: Space | undefined;
 	let isAnimating = false;
-	let isSolved = false;
-
-	$: {
-		isSolved = !board.spaces.some((x) => x.pieceType === PieceType.Person);
-	}
+	let hiddenSpaces: Space[] = [];
+	let animatingElements = new Set<HTMLImageElement | SVGSVGElement>();
 
 	async function clickSpace(space: Space, button: HTMLButtonElement) {
 		if (lastDestination) {
@@ -54,8 +47,11 @@
 			if (destinationIndex >= 0 || pullerIndex >= 0) {
 				const destination = destinations[destinationIndex >= 0 ? destinationIndex : pullerIndex];
 				const puller = pullers[pullerIndex >= 0 ? pullerIndex : destinationIndex];
-				await animateMovement(puller, destination);
+				animateMovement(puller, destination);
 				board.movePiece(activeCell?.space?.coords as any, destination.coords as any);
+				if (destination.pieceType !== PieceType.Home && destination.pieceType !== PieceType.Barn) {
+					hiddenSpaces = [...hiddenSpaces, destination];
+				}
 				clearSelection();
 				board = board;
 				moveStack = [...moveStack, board.serialize()];
@@ -81,6 +77,10 @@
 
 	async function animateMovement(puller: Space, destination: Space) {
 		if (!activeCell) return;
+		for (const element of animatingElements) {
+			element.style.opacity = '0';
+			animatingElements.delete(element);
+		}
 		isAnimating = true;
 		const activeButton = activeCell.button;
 		const imgNode = activeButton.querySelector('img') as HTMLImageElement;
@@ -117,6 +117,7 @@
 		imgCopy.style.height = height + 'px';
 		imgCopy.style.left = left + 'px';
 		imgCopy.style.top = top + 'px';
+		imgCopy.style.opacity = '1';
 
 		const slopeDown = (x2 <= x1 && y2 <= y1) || (x2 >= x1 && y2 >= y1);
 
@@ -127,6 +128,8 @@
 		}%" style="stroke:rgba(99, 88, 77, 0.9);stroke-width:10" stroke-linecap="round" />`;
 		boardNode.appendChild(svgElement);
 		boardNode.appendChild(imgCopy);
+		animatingElements.add(svgElement);
+		animatingElements.add(imgCopy);
 
 		const STEP_1_TIME = 200;
 		const STEP_2_TIME = 250;
@@ -225,6 +228,7 @@
 
 		boardNode.removeChild(imgCopy);
 		boardNode.removeChild(svgElement);
+		hiddenSpaces = hiddenSpaces.slice(1);
 		isAnimating = false;
 	}
 
@@ -253,7 +257,7 @@
 	{#each board.spaces as space}
 		<button
 			class="cell"
-			disabled={isAnimating || isSolved}
+			disabled={board.isSolved()}
 			class:hexagon={board.gridType === GridType.Hexagonal}
 			class:rectangle={board.gridType === GridType.Rectangular}
 			class:hidden={space.pieceType === PieceType.Empty}
@@ -264,11 +268,17 @@
 			on:click={(e) => clickSpace(space, e.currentTarget)}
 		>
 			{#if space.pieceType && space.pieceType !== PieceType.Empty}
-				<img src={`/img/${space.pieceType}.svg`} alt={space.pieceType} />
+				<img
+					src={`/img/${space.pieceType}.svg`}
+					alt={space.pieceType}
+					class:invisible={hiddenSpaces.some(
+						(x) => coordsEqual(x.coords, space.coords) && x.pieceType === space.pieceType
+					)}
+				/>
 			{/if}
 		</button>
 	{/each}
-	{#if isSolved}
+	{#if board.isSolved()}
 		<div
 			style="position: absolute; left: 50%; top: 0%"
 			use:confetti={{
@@ -342,6 +352,9 @@
 		top: 12.5%;
 		position: absolute;
 		object-fit: contain;
+	}
+	img.invisible {
+		opacity: 0;
 	}
 
 	.board button {

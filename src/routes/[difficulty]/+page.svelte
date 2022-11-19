@@ -10,6 +10,8 @@
 	<meta name="description" content="Puzzle game" />
 </svelte:head>
 
+<a href="/">Home</a>
+
 <h1>{data.name}</h1>
 
 {#each data.puzzleList as puzzle, i}
