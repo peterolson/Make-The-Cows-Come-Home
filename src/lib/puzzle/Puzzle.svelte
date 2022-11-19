@@ -1,15 +1,9 @@
 <script lang="ts">
-	import {
-		coordsEqual,
-		createBoardFromString,
-		GridType,
-		PieceType,
-		type Space
-	} from '$lib/puzzle/Board';
+	import { Board, coordsEqual, GridType, PieceType, type Space } from '$lib/puzzle/Board';
 	import { confetti } from '@neoconfetti/svelte';
 
 	export let puzzleString: string;
-	let board = createBoardFromString(puzzleString);
+	let board = Board.deserialize(puzzleString);
 
 	let activeCell: { space: Space; button: HTMLButtonElement } | undefined;
 	let destinations: Space[] = [];
@@ -242,13 +236,13 @@
 	function undo() {
 		if (moveStack.length <= 1) return;
 		moveStack = moveStack.slice(0, moveStack.length - 1);
-		board = board.deserialize(moveStack[moveStack.length - 1]);
+		board = Board.deserialize(moveStack[moveStack.length - 1]);
 		clearSelection();
 	}
 
 	function reset() {
 		moveStack = moveStack.slice(0, 1);
-		board = board.deserialize(moveStack[0]);
+		board = Board.deserialize(moveStack[0]);
 		clearSelection();
 	}
 </script>
