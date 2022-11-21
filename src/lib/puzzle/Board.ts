@@ -11,100 +11,90 @@ export enum PieceType {
 	Empty = 'empty'
 }
 
-export type RectangularCoords = {
+export type Coords = {
 	x: number;
 	y: number;
 };
 
-export type RectangularSpace = {
+export type Space = {
 	pieceType: PieceType | null;
-	coords: RectangularCoords;
+	coords: Coords;
 };
 
 const SQRT_3 = Math.sqrt(3);
 // uses Hexagonal Efficient Coordinate System
 // https://en.wikipedia.org/wiki/Hexagonal_Efficient_Coordinate_System
-export type HexagonalCoords = {
+type HexagonalCoords = {
 	a: number;
 	r: number;
 	c: number;
 };
 
-export type HexagonalSpace = {
-	pieceType: PieceType | null;
-	coords: HexagonalCoords;
-};
+const rectToHex = (coords: Coords): HexagonalCoords => {
+	const a = coords.y % 2;
+	const r = Math.floor(coords.y / 2);
+	const c = coords.x;
+	return { a, r, c };
+}
 
-export type Coords = RectangularCoords | HexagonalCoords;
-export type Space = RectangularSpace | HexagonalSpace;
-
-function genericizeCoords(
-	fn: ((coords: RectangularCoords) => Coords) | ((coords: HexagonalCoords) => Coords)
-): (coords: Coords) => Coords {
-	return fn as (coords: Coords) => Coords;
+const hextoRect = (coords: HexagonalCoords): Coords => {
+	const x = coords.c;
+	const y = coords.r * 2 + coords.a;
+	return { x, y };
 }
 
 const rectangularDirections: ((coords: Coords) => Coords)[] = [
-	(coords: RectangularCoords) => ({ x: coords.x - 1, y: coords.y }),
-	(coords: RectangularCoords) => ({ x: coords.x + 1, y: coords.y }),
-	(coords: RectangularCoords) => ({ x: coords.x, y: coords.y - 1 }),
-	(coords: RectangularCoords) => ({ x: coords.x, y: coords.y + 1 })
-].map(genericizeCoords);
+	(coords) => ({ x: coords.x - 1, y: coords.y }),
+	(coords) => ({ x: coords.x + 1, y: coords.y }),
+	(coords) => ({ x: coords.x, y: coords.y - 1 }),
+	(coords) => ({ x: coords.x, y: coords.y + 1 })
+];
+
+const hexDir = (fn: (x: HexagonalCoords) => HexagonalCoords) => (coords: Coords) => {
+	const hexCoords = rectToHex(coords);
+	const newHexCoords = fn(hexCoords);
+	return hextoRect(newHexCoords);
+}
 
 const hexagonalDirections: ((coords: Coords) => Coords)[] = [
-	(coords: HexagonalCoords) => ({ a: coords.a, r: coords.r, c: coords.c + 1 }),
-	(coords: HexagonalCoords) => ({ a: coords.a, r: coords.r, c: coords.c - 1 }),
-	(coords: HexagonalCoords) => ({
+	hexDir((coords) => ({ a: coords.a, r: coords.r, c: coords.c + 1 })),
+	hexDir((coords) => ({ a: coords.a, r: coords.r, c: coords.c - 1 })),
+	hexDir((coords) => ({
 		a: 1 - coords.a,
 		r: coords.r + coords.a,
 		c: coords.c - (1 - coords.a)
-	}),
-	(coords: HexagonalCoords) => ({
+	})),
+	hexDir((coords) => ({
 		a: 1 - coords.a,
 		r: coords.r + coords.a,
 		c: coords.c + coords.a
-	}),
-	(coords: HexagonalCoords) => ({
+	})),
+	hexDir((coords) => ({
 		a: 1 - coords.a,
 		r: coords.r - (1 - coords.a),
 		c: coords.c - (1 - coords.a)
-	}),
-	(coords: HexagonalCoords) => ({
+	})),
+	hexDir((coords) => ({
 		a: 1 - coords.a,
 		r: coords.r - (1 - coords.a),
 		c: coords.c + coords.a
-	})
-].map(genericizeCoords);
+	}))
+];
 
 export class Board {
 	gridType: GridType;
 	width: number;
 	height: number;
-	hasOddRow: boolean;
 	spaces: Space[];
 
-	constructor(gridType: GridType, width: number, height: number, hasOddRow: boolean) {
+	constructor(gridType: GridType, width: number, height: number) {
 		this.gridType = gridType;
 		this.width = width;
 		this.height = height;
-		this.hasOddRow = hasOddRow;
 		this.spaces = [];
-		if (gridType === GridType.Rectangular) {
+		for (let y = 0; y < height; y++) {
 			for (let x = 0; x < width; x++) {
-				for (let y = 0; y < height; y++) {
-					this.spaces.push({ pieceType: null, coords: { x, y } });
-				}
-			}
-		} else {
-			for (let a = 0; a < 2; a++) {
-				for (let r = 0; r < height; r++) {
-					if (r === height - 1 && a === 1 && hasOddRow) {
-						continue;
-					}
-					for (let c = 0; c < width; c++) {
-						this.spaces.push({ pieceType: null, coords: { a, r, c } });
-					}
-				}
+				this.spaces.push({ pieceType: null, coords: { x, y } });
 			}
 		}
 	}
@@ -119,17 +109,9 @@ export class Board {
 	}
 
 	getSpaceByCoords(coords: Coords): Space | undefined {
-		if (this.gridType === GridType.Rectangular && 'x' in coords) {
-			return (this.spaces as RectangularSpace[]).find(
-				(space) => space.coords.x === coords.x && space.coords.y === coords.y
-			);
-		}
-		if (this.gridType === GridType.Hexagonal && 'a' in coords) {
-			return (this.spaces as HexagonalSpace[]).find(
-				(space) =>
-					space.coords.a === coords.a && space.coords.r === coords.r && space.coords.c === coords.c
-			);
-		}
+		return (this.spaces).find(
+			(space) => space.coords.x === coords.x && space.coords.y === coords.y
+		);
 	}
 
 	movePiece(from: Coords, to: Coords) {
@@ -213,7 +195,7 @@ export class Board {
 			return Math.min(width, height);
 		}
 		const width = 100 / (this.width + 0.5);
-		const height = 100 / ((this.height + (this.hasOddRow ? 0 : 0.5)) * SQRT_3);
+		const height = 100 / (this.height * SQRT_3 / 2);
 		return Math.min(width, height);
 	}
 	getLeftOffset(): number {
@@ -228,19 +210,20 @@ export class Board {
 		if (this.gridType === GridType.Rectangular) {
 			return (100 - spaceSize * this.height) / 2;
 		}
-		return (100 - spaceSize * (this.height + (this.hasOddRow ? -0.4 : 0.1)) * SQRT_3) / 2;
+		console.log(spaceSize, this.height);
+		return (100 - spaceSize * this.height * SQRT_3 / 2) / 2;
 	}
 
 	getCoordsCSS(coords: Coords): string {
 		const spaceSize = this.getSpaceSize();
 		const leftOffset = this.getLeftOffset();
 		const topOffset = this.getTopOffset();
-		if ('x' in coords) {
+		if (this.gridType === GridType.Rectangular) {
 			const left = leftOffset + coords.x * spaceSize;
 			const top = topOffset + coords.y * spaceSize;
 			return `left: ${left}%; top: ${top}%; width: ${spaceSize}%; height: ${spaceSize}%;`;
 		}
-		const { a, r, c } = coords;
+		const { a, r, c } = rectToHex(coords);
 		const x = leftOffset + (a / 2 + c) * spaceSize;
 		const y = topOffset + (a / 2 + r) * SQRT_3 * spaceSize;
 		return `left: ${x}%; top: ${y}%; width: ${spaceSize}%; height: ${spaceSize}%;`;
@@ -248,7 +231,7 @@ export class Board {
 
 	serialize() {
 		const prefix = this.gridType === GridType.Rectangular ? 'R' : 'H';
-		return `${prefix}${this.width}|${this.height}|${this.hasOddRow ? 1 : 0}|${this.spaces
+		return `${prefix}${this.width}|${this.height}|${this.spaces
 			.map((space) => {
 				const pieceType = space.pieceType;
 				if (pieceType === PieceType.Empty) return 'E';
@@ -267,8 +250,8 @@ export class Board {
 		}
 		const type = serialized[0];
 		const gridType = type === 'R' ? GridType.Rectangular : GridType.Hexagonal;
-		const [width, height, hasOddRow, pieces] = serialized.slice(1).split('|');
-		const board = new Board(gridType, +width, +height, !!+hasOddRow);
+		const [width, height, pieces] = serialized.slice(1).split('|');
+		const board = new Board(gridType, +width, +height);
 		for (let i = 0; i < board.spaces.length; i++) {
 			const space = board.spaces[i];
 			const c = pieces[i];
@@ -287,10 +270,5 @@ export function coordsEqual(a: Coords | undefined, b: Coords | undefined): boole
 	if (!a || !b) {
 		return false;
 	}
-	if ('x' in a && 'x' in b) {
-		return a.x === b.x && a.y === b.y;
-	} else if ('a' in a && 'a' in b) {
-		return a.a === b.a && a.r === b.r && a.c === b.c;
-	}
-	return false;
+	return a.x === b.x && a.y === b.y;
 }
