@@ -45,6 +45,10 @@ export const puzzles = [
 	},
 	{
 		difficulty: 'easy',
+		board: '7~H3|3|OPH__OOEB'
+	},
+	{
+		difficulty: 'easy',
 		board: '2~R3|5|BPO__________P_'
 	},
 	{

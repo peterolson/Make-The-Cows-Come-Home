@@ -188,45 +188,65 @@ export class Board {
 		return personCount * homeCount + cowCount * barnCount === 0;
 	}
 
-	getSpaceSize(): number {
+	getSpaceSize(totalWidth: number, totalHeight: number): number {
 		if (this.gridType === GridType.Rectangular) {
-			const width = 100 / this.width;
-			const height = 100 / this.height;
+			const width = totalWidth / this.width;
+			const height = totalHeight / this.height;
 			return Math.min(width, height);
 		}
-		const width = 100 / (this.width + 0.5);
-		const height = 100 / (this.height * SQRT_3 / 2);
+		const width = totalWidth / (this.width + 0.5);
+		const height = totalHeight / (this.height);
 		return Math.min(width, height);
 	}
-	getLeftOffset(): number {
-		const spaceSize = this.getSpaceSize();
+	getLeftOffset(totalWidth: number, totalHeight: number): number {
+		const spaceSize = this.getSpaceSize(totalWidth, totalHeight);
 		if (this.gridType === GridType.Rectangular) {
-			return (100 - spaceSize * this.width) / 2;
+			return (totalWidth - spaceSize * this.width) / 2;
 		}
-		return (100 - spaceSize * (this.width + 0.5)) / 2;
+		return (totalWidth - spaceSize * (this.width + 0.5)) / 2;
 	}
-	getTopOffset(): number {
-		const spaceSize = this.getSpaceSize();
+	getTopOffset(totalWidth: number, totalHeight: number): number {
+		const spaceSize = this.getSpaceSize(totalWidth, totalHeight);
 		if (this.gridType === GridType.Rectangular) {
-			return (100 - spaceSize * this.height) / 2;
+			return (totalHeight - spaceSize * this.height) / 2;
 		}
-		console.log(spaceSize, this.height);
-		return (100 - spaceSize * this.height * SQRT_3 / 2) / 2;
+		return (totalHeight - spaceSize * this.height * SQRT_3 / 2) / 2;
 	}
 
-	getCoordsCSS(coords: Coords): string {
-		const spaceSize = this.getSpaceSize();
-		const leftOffset = this.getLeftOffset();
-		const topOffset = this.getTopOffset();
-		if (this.gridType === GridType.Rectangular) {
-			const left = leftOffset + coords.x * spaceSize;
-			const top = topOffset + coords.y * spaceSize;
-			return `left: ${left}%; top: ${top}%; width: ${spaceSize}%; height: ${spaceSize}%;`;
+	getCoordsCSS(coords: Coords, parentWidth: number | undefined, parentHeight: number | undefined): string {
+		const width = (parentWidth ? parentWidth : 8) - 8;
+		const height = parentHeight ? parentHeight : 0;
+		const pageAspectRatio = width / height;
+		const boardAspectRatio = this.width / this.height;
+
+		const shouldRotate = (pageAspectRatio < 1) !== (boardAspectRatio < 1);
+
+		let spaceSize = this.getSpaceSize(width, height);
+		let leftOffset = 4 + this.getLeftOffset(width, height);
+		let topOffset = this.getTopOffset(width, height);
+		let left = coords.x * spaceSize;
+		let top = coords.y * spaceSize;
+		if (this.gridType === GridType.Hexagonal) {
+			const { a, r, c } = rectToHex(coords);
+			left = (a / 2 + c) * spaceSize;
+			top = (a / 2 + r) * SQRT_3 * spaceSize;
 		}
-		const { a, r, c } = rectToHex(coords);
-		const x = leftOffset + (a / 2 + c) * spaceSize;
-		const y = topOffset + (a / 2 + r) * SQRT_3 * spaceSize;
-		return `left: ${x}%; top: ${y}%; width: ${spaceSize}%; height: ${spaceSize}%;`;
+		let addendum = "";
+		if (shouldRotate) {
+			const board = new Board(this.gridType, this.height, this.width);
+			let newSpaceSize = board.getSpaceSize(width, height);
+			let scaleFactor = newSpaceSize / spaceSize;
+			([left, top] = [top * scaleFactor, left * scaleFactor]);
+			spaceSize = newSpaceSize;
+			leftOffset = 4 + board.getLeftOffset(width, height);
+			topOffset = board.getTopOffset(width, height);
+			if (this.gridType === GridType.Hexagonal) {
+				addendum = `clip-path: polygon(0% 50%, 25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%)`;
+				leftOffset += newSpaceSize / 2;
+				topOffset -= newSpaceSize / 2;
+			}
+		}
+		return `left: ${leftOffset + left}px; top: ${topOffset + top}px; width: ${spaceSize}px; height: ${spaceSize}px;` + addendum;
 	}
 
 	serialize() {

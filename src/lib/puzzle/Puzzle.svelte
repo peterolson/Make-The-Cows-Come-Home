@@ -14,6 +14,8 @@
 	let isAnimating = false;
 	let hiddenSpaces: Space[] = [];
 	let animatingElements = new Set<HTMLImageElement | SVGSVGElement>();
+	let boardWidth = 0;
+	let boardHeight = 0;
 
 	async function clickSpace(space: Space, button: HTMLButtonElement) {
 		if (lastDestination) {
@@ -247,7 +249,12 @@
 	}
 </script>
 
-<div class="board" bind:this={boardNode}>
+<div
+	class="board"
+	bind:this={boardNode}
+	bind:offsetWidth={boardWidth}
+	bind:offsetHeight={boardHeight}
+>
 	{#each board.spaces as space}
 		<button
 			class="cell"
@@ -258,7 +265,7 @@
 			class:active={coordsEqual(space?.coords, activeCell?.space?.coords)}
 			class:puller={pullers.some((x) => coordsEqual(x.coords, space.coords))}
 			class:destination={destinations.some((x) => coordsEqual(x.coords, space.coords))}
-			style={board.getCoordsCSS(space.coords)}
+			style={board.getCoordsCSS(space.coords, boardWidth, boardHeight)}
 			on:click={(e) => clickSpace(space, e.currentTarget)}
 		>
 			{#if space.pieceType && space.pieceType !== PieceType.Empty}
@@ -343,9 +350,8 @@
 	}
 
 	.board {
-		margin: 0 auto;
-		width: calc(100vmin - 160px);
-		height: calc(100vmin - 160px);
+		flex: 1;
+		width: 100%;
 		position: relative;
 	}
 
@@ -368,11 +374,13 @@
 	}
 
 	.actions {
-		flex: 1;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		gap: 16px;
 		align-items: center;
+		padding: 8px;
+		box-sizing: border-box;
+		height: 56px;
 	}
 </style>

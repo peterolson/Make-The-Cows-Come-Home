@@ -9,9 +9,9 @@
 <div class="column">
 	<div class="header">
 		<div>
-			<a href="/{data.key}">← {data.name}</a>
+			<a href="/{data.key}">=</a>
 			{#if data.prevPuzzle}
-				<a href="/{data.key}/{data.prevPuzzle}">#{data.index}</a>
+				<a href="/{data.key}/{data.prevPuzzle}">←</a>
 			{/if}
 		</div>
 		<h1>{data.title}</h1>
@@ -36,13 +36,24 @@
 		overflow: hidden;
 	}
 	.header {
-		height: 80px;
+		height: 64px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 16px;
 		box-sizing: border-box;
+		background-color: var(--color-theme-1);
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		margin-bottom: 3px;
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+		padding: 0 16px;
 	}
+
+	.header h1,
+	.header a {
+		font-size: 22px;
+		color: rgba(255, 255, 255, 0.95);
+	}
+
 	.board {
 		flex: 1;
 		display: flex;

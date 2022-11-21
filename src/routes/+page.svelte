@@ -8,8 +8,16 @@
 </svelte:head>
 
 <h1>Make the cows come home</h1>
-{#each difficulties as difficulty}
-	<div>
-		<a href="/{difficulty.key}">{difficulty.name}</a>
-	</div>
-{/each}
+<div class="links">
+	{#each difficulties as difficulty}
+		<div>
+			<a href="/{difficulty.key}">{difficulty.name}</a>
+		</div>
+	{/each}
+</div>
+
+<style>
+	.links {
+		text-align: center;
+	}
+</style>
