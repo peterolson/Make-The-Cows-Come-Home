@@ -35,13 +35,13 @@ const rectToHex = (coords: Coords): HexagonalCoords => {
 	const r = Math.floor(coords.y / 2);
 	const c = coords.x;
 	return { a, r, c };
-}
+};
 
 const hextoRect = (coords: HexagonalCoords): Coords => {
 	const x = coords.c;
 	const y = coords.r * 2 + coords.a;
 	return { x, y };
-}
+};
 
 const rectangularDirections: ((coords: Coords) => Coords)[] = [
 	(coords) => ({ x: coords.x - 1, y: coords.y }),
@@ -54,7 +54,7 @@ const hexDir = (fn: (x: HexagonalCoords) => HexagonalCoords) => (coords: Coords)
 	const hexCoords = rectToHex(coords);
 	const newHexCoords = fn(hexCoords);
 	return hextoRect(newHexCoords);
-}
+};
 
 const hexagonalDirections: ((coords: Coords) => Coords)[] = [
 	hexDir((coords) => ({ a: coords.a, r: coords.r, c: coords.c + 1 })),
@@ -109,9 +109,7 @@ export class Board {
 	}
 
 	getSpaceByCoords(coords: Coords): Space | undefined {
-		return (this.spaces).find(
-			(space) => space.coords.x === coords.x && space.coords.y === coords.y
-		);
+		return this.spaces.find((space) => space.coords.x === coords.x && space.coords.y === coords.y);
 	}
 
 	movePiece(from: Coords, to: Coords) {
@@ -195,7 +193,7 @@ export class Board {
 			return Math.min(width, height);
 		}
 		const width = totalWidth / (this.width + 0.5);
-		const height = totalHeight / (this.height);
+		const height = totalHeight / this.height;
 		return Math.min(width, height);
 	}
 	getLeftOffset(totalWidth: number, totalHeight: number): number {
@@ -210,16 +208,20 @@ export class Board {
 		if (this.gridType === GridType.Rectangular) {
 			return (totalHeight - spaceSize * this.height) / 2;
 		}
-		return (totalHeight - spaceSize * this.height * SQRT_3 / 2) / 2;
+		return (totalHeight - (spaceSize * this.height * SQRT_3) / 2) / 2;
 	}
 
-	getCoordsCSS(coords: Coords, parentWidth: number | undefined, parentHeight: number | undefined): string {
+	getCoordsCSS(
+		coords: Coords,
+		parentWidth: number | undefined,
+		parentHeight: number | undefined
+	): string {
 		const width = (parentWidth ? parentWidth : 8) - 8;
 		const height = parentHeight ? parentHeight : 0;
 		const pageAspectRatio = width / height;
 		const boardAspectRatio = this.width / this.height;
 
-		const shouldRotate = (pageAspectRatio < 1) !== (boardAspectRatio < 1);
+		const shouldRotate = pageAspectRatio < 1 !== boardAspectRatio < 1;
 
 		let spaceSize = this.getSpaceSize(width, height);
 		let leftOffset = 4 + this.getLeftOffset(width, height);
@@ -231,12 +233,12 @@ export class Board {
 			left = (a / 2 + c) * spaceSize;
 			top = (a / 2 + r) * SQRT_3 * spaceSize;
 		}
-		let addendum = "";
+		let addendum = '';
 		if (shouldRotate) {
 			const board = new Board(this.gridType, this.height, this.width);
-			let newSpaceSize = board.getSpaceSize(width, height);
-			let scaleFactor = newSpaceSize / spaceSize;
-			([left, top] = [top * scaleFactor, left * scaleFactor]);
+			const newSpaceSize = board.getSpaceSize(width, height);
+			const scaleFactor = newSpaceSize / spaceSize;
+			[left, top] = [top * scaleFactor, left * scaleFactor];
 			spaceSize = newSpaceSize;
 			leftOffset = 4 + board.getLeftOffset(width, height);
 			topOffset = board.getTopOffset(width, height);
@@ -246,7 +248,11 @@ export class Board {
 				topOffset -= newSpaceSize / 2;
 			}
 		}
-		return `left: ${leftOffset + left}px; top: ${topOffset + top}px; width: ${spaceSize}px; height: ${spaceSize}px;` + addendum;
+		return (
+			`left: ${leftOffset + left}px; top: ${
+				topOffset + top
+			}px; width: ${spaceSize}px; height: ${spaceSize}px;` + addendum
+		);
 	}
 
 	serialize() {

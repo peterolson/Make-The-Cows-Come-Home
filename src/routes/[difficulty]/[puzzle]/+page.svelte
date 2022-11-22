@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Puzzle from '$lib/puzzle/Puzzle.svelte';
-	import { puzzles } from '$lib/puzzle/PuzzleList';
+	import Puzzle from '$lib/ui/Puzzle.svelte';
 	import Button from '$lib/ui/Button.svelte';
 	import Header from '$lib/ui/Header.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+	export let nextLink: HTMLAnchorElement;
 </script>
 
 <div class="column">
@@ -22,7 +22,7 @@
 		</slot>
 		<slot slot="right">
 			{#if data.nextPuzzle}
-				<a href="/{data.key}/{data.nextPuzzle}">
+				<a href="/{data.key}/{data.nextPuzzle}" bind:this={nextLink}>
 					<Button icon="next" />
 				</a>
 			{/if}
@@ -30,7 +30,12 @@
 	</Header>
 	<div class="board">
 		{#key data.puzzleString}
-			<Puzzle puzzleString={data.puzzleString} />
+			<Puzzle
+				puzzleString={data.puzzleString}
+				{nextLink}
+				difficultyLink="/{data.key}"
+				difficultyName={data.name}
+			/>
 		{/key}
 	</div>
 </div>

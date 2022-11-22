@@ -1,32 +1,16 @@
 <script lang="ts">
 	import Button from '$lib/ui/Button.svelte';
 	import Header from '$lib/ui/Header.svelte';
+	import Stars from '$lib/ui/Stars.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
-	function getStarType(puzzleString: string) {
+	function getMoveCounts(puzzleString: string) {
 		const bestMoves = +puzzleString.split('~')[0];
 		const userMoves =
 			typeof localStorage !== 'undefined' ? localStorage.getItem(puzzleString) || 0 : 0;
-		let starType = 'empty';
-		let starText = '';
-		if (userMoves <= bestMoves) {
-			starType = 'gold';
-			starText = '★★★';
-		} else if (userMoves <= (bestMoves * 6) / 5 || userMoves === bestMoves + 1) {
-			starType = 'silver';
-			starText = '★★';
-		} else if (userMoves > bestMoves) {
-			starType = 'bronze';
-			starText = '★';
-		}
-		return {
-			bestMoves,
-			userMoves,
-			starType,
-			starText
-		};
+		return { bestMoves, userMoves: +userMoves };
 	}
 </script>
 
@@ -44,24 +28,18 @@
 
 <div class="grid">
 	{#each data.puzzleList as puzzle, i}
-		{@const { bestMoves, userMoves, starType, starText } = getStarType(puzzle.board)}
+		{@const { userMoves, bestMoves } = getMoveCounts(puzzle.board)}
 		<a href="/{data.key}/{puzzle.board}">
 			<div>
 				<h3>{data.prefix}{i + 1}</h3>
-				{#if userMoves}
-					<div
-						class="star"
-						class:gold={starType === 'gold'}
-						class:silver={starType === 'silver'}
-						class:bronze={starType === 'bronze'}
-					>
-						{starText}
-					</div>
-					<div class="description">Solved in {userMoves} moves</div>
-				{:else}
-					<div class="star">…</div>
-					<div class="description">Not yet solved</div>
-				{/if}
+				<Stars {bestMoves} {userMoves} />
+				<div class="description">
+					{#if userMoves}
+						Solved in {userMoves} moves
+					{:else}
+						Not yet solved
+					{/if}
+				</div>
 			</div>
 		</a>
 	{/each}
@@ -99,18 +77,5 @@
 		color: rgba(0, 0, 0, 0.7);
 		margin-top: 4px;
 		font-size: 0.725rem;
-	}
-
-	.star {
-		font-size: 1.5rem;
-	}
-	.star.gold {
-		color: #ffd700;
-	}
-	.star.silver {
-		color: #c0c0c0;
-	}
-	.star.bronze {
-		color: #cd7f32;
 	}
 </style>

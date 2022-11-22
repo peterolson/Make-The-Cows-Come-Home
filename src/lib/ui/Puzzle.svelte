@@ -2,8 +2,12 @@
 	import { Board, coordsEqual, GridType, PieceType, type Space } from '$lib/puzzle/Board';
 	import Button from '$lib/ui/Button.svelte';
 	import { confetti } from '@neoconfetti/svelte';
+	import PuzzleFinished from './PuzzleFinished.svelte';
 
 	export let puzzleString: string;
+	export let nextLink: HTMLAnchorElement;
+	export let difficultyLink: string;
+	export let difficultyName: string;
 	let board = Board.deserialize(puzzleString);
 
 	let activeCell: { space: Space; button: HTMLButtonElement } | undefined;
@@ -284,6 +288,14 @@
 		</button>
 	{/each}
 	{#if board.isSolved() && !isAnimating}
+		<PuzzleFinished
+			onReset={reset}
+			userMoves={moveStack.length - 1}
+			bestMoves={+puzzleString.split('~')[0]}
+			{nextLink}
+			{difficultyLink}
+			{difficultyName}
+		/>
 		<div
 			style="position: absolute; left: 50%; top: 0%"
 			use:confetti={{
