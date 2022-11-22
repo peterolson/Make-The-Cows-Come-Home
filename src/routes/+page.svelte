@@ -10,7 +10,8 @@
 			if (typeof localStorage === 'undefined') return false;
 			return !!localStorage.getItem(p.board);
 		}).length;
-		return { total, solved };
+		const first = filteredPuzzles[0];
+		return { total, solved, first };
 	}
 </script>
 
@@ -22,11 +23,18 @@
 <Header>Make the cows come home</Header>
 <div class="links">
 	{#each difficulties as difficulty}
-		{@const { total, solved } = getSolvedCount(difficulty.key)}
-		<a href="/{difficulty.key}">
-			<h2>{difficulty.name}</h2>
-			<div class="description">Solved {solved} out of {total}</div>
-		</a>
+		{@const { total, solved, first } = getSolvedCount(difficulty.key)}
+		{#if difficulty.key === 'learn' && solved === 0}
+			<a href="/{difficulty.key}/{first.board}">
+				<h2>{difficulty.name}</h2>
+				<div class="description">Solved {solved} out of {total}</div>
+			</a>
+		{:else}
+			<a href="/{difficulty.key}">
+				<h2>{difficulty.name}</h2>
+				<div class="description">Solved {solved} out of {total}</div>
+			</a>
+		{/if}
 	{/each}
 </div>
 

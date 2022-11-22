@@ -338,7 +338,7 @@
 
 <style>
 	.cell {
-		background-color: #fafafa;
+		background-color: #fff;
 		position: absolute;
 		transition: background-color 0.5s;
 	}
@@ -411,5 +411,7 @@
 		box-sizing: border-box;
 		height: 52px;
 		margin-top: 4px;
+		background-color: var(--color-bg-0);
+		outline: 1px solid rgba(0, 0, 0, 0.3);
 	}
 </style>
