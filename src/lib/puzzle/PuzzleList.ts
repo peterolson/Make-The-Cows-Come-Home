@@ -76,811 +76,579 @@ export const puzzles = [
 	},
 	{
 		"difficulty": "easy",
-		"board": "6~H3|3|O_O_B_O_O"
+		"board": "2~R3|2|O_P_B_"
 	},
 	{
 		"difficulty": "easy",
-		"board": "7~R3|3|OOO_B_OBO"
+		"board": "3~R4|2|OP_P_B__"
 	},
 	{
 		"difficulty": "easy",
-		"board": "7~H3|3|OPH__OOEB"
+		"board": "3~R3|3|PB___OP__"
 	},
 	{
 		"difficulty": "easy",
-		"board": "7~H4|4|P_O_E__B____P__P"
+		"board": "2~R3|2|O_H_B_"
 	},
 	{
 		"difficulty": "easy",
-		"board": "6~H4|3|OEB_O__H_OB_"
+		"board": "3~R3|3|OPB___P_B"
 	},
 	{
 		"difficulty": "easy",
-		"board": "9~H3|3|OOP__BOPO"
+		"board": "3~R3|3|B_P__B_O_"
 	},
 	{
 		"difficulty": "easy",
-		"board": "6~R4|3|O_OB_B_E_O_O"
+		"board": "4~H4|3|BEP_P__BPPO_"
 	},
 	{
 		"difficulty": "easy",
+		"board": "3~R3|2|O_PBH_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~R4|3|_B__O__P_P__"
+	},
+	{
+		"difficulty": "easy",
+		"board": "3~R3|2|O_OBB_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "3~H4|2|O__O_BB_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~H4|2|OO_P__B_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "3~R4|2|OO_H_BB_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~H3|3|OEO_B_B_P"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~R4|3|P_B____O_B__"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~R4|2|OP_B_B_O"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~H4|3|B__P___O__B_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~R4|3|_O__OBOO_O__"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~H4|3|OPPB__E_P__B"
+	},
+	{
+		"difficulty": "easy",
+		"board": "3~R4|2|O_H_BP_B"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~R3|3|O_P_B___O"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~R4|3|OP_B_E___BO_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "3~H4|2|O_H_BB_P"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~R3|3|_O_B_P_H_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~R4|2|O_OP_B__"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~H4|3|O__PE__BB_P_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "6~R4|3|BEP____BPOPP"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~R4|2|OO_H__B_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~R3|3|BO_E_HP_B"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~R4|2|OO_HBOB_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~H4|3|B_P____OP_B_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~H4|2|OO_O_BB_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~R3|3|O_H__B_OB"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~H4|3|O__P____P_B_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~R3|3|OO___BP_B"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~R3|3|O_H_B___O"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~H4|3|B__P____PPO_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~H4|3|O_PP_E_BP__P"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~R4|2|BOH_PP_B"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~H4|3|O__O__E_BHB_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~R4|2|OO_O__BB"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~H4|3|O_PPE___P__B"
+	},
+	{
+		"difficulty": "easy",
+		"board": "4~R4|3|BOB____H_O__"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~H3|3|OB___OB_P"
+	},
+	{
+		"difficulty": "easy",
+		"board": "6~R4|3|PP_P___OPEB_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~R3|3|OBOH_EB_P"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~H4|3|OPP____BP__B"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~R4|2|O_OPBBH_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "6~R4|3|BP_P___OPEB_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~R4|3|B_P____OP_B_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "6~R4|2|OP_P_BH_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "6~R4|3|O__P___PPB_B"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~R3|3|BO_E_HP_P"
+	},
+	{
+		"difficulty": "easy",
+		"board": "6~H4|3|OPP____PP__B"
+	},
+	{
+		"difficulty": "easy",
+		"board": "6~H4|2|PO_P_HB_"
+	},
+	{
+		"difficulty": "easy",
+		"board": "6~R4|3|O__P___PPB_P"
+	},
+	{
+		"difficulty": "easy",
+		"board": "5~H3|3|O_O_O_BHB"
+	},
+	{
+		"difficulty": "easy",
+		"board": "6~R3|3|BO_E_HPPB"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~H4|2|BO_HPP_B"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "6~H3|3|OOHE___BO"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~R3|3|OB__B_O_O"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~R3|3|O_OEB_BOH"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "4~H4|3|O_O____B_HB_"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "4~H3|3|O_O___BHB"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~R3|3|BH___BPO_"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~H3|3|O_O___B_P"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~H4|2|O_OHBP_B"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "6~H4|3|OEB____O_P__"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~H3|3|PO___B_BH"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~H3|3|OEB__O_OB"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~H3|3|O_O___BO_"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~H4|3|O_O_____B__P"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "7~R4|3|OP_PP__BP__B"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "6~H3|3|OOHE_B_BO"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "6~H4|3|P_B_O__O__B_"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~R3|3|OBH_B_O_O"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "6~R3|3|OB_H_OB_P"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~H3|3|O_O_B_O_H"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "6~R4|3|O__P____PB_P"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "7~H3|3|OOPE___BH"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~H4|3|O_O____B_OB_"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "6~R4|3|O__O_B___B_P"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "6~R3|3|PO___BPH_"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "7~R4|3|O__P____PBEP"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~H3|3|O_O___BOB"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "8~H4|3|OPPBE__BO_P_"
+	},
+	{
+		"difficulty": "moderate",
+		"board": "5~H3|3|O_P__HP_B"
+	},
+	{
+		"difficulty": "moderate",
 		"board": "7~R3|3|BH___BPOP"
 	},
 	{
-		"difficulty": "easy",
-		"board": "6~R4|3|OBEP__H_O_EB"
+		"difficulty": "moderate",
+		"board": "6~H3|3|O_P_B_H_O"
 	},
 	{
-		"difficulty": "easy",
-		"board": "9~H4|3|OP_B__PPP_PO"
+		"difficulty": "moderate",
+		"board": "6~H3|3|OEB__HP_B"
 	},
 	{
-		"difficulty": "easy",
-		"board": "8~R5|3|PP_PPO_____B_EP"
+		"difficulty": "moderate",
+		"board": "9~H4|3|OP_OP__PB__B"
 	},
 	{
-		"difficulty": "easy",
-		"board": "8~H3|3|OOOO_HBOB"
+		"difficulty": "moderate",
+		"board": "7~H4|3|OP_BE___P__O"
 	},
 	{
-		"difficulty": "easy",
-		"board": "6~R3|3|OBO_B_O_O"
+		"difficulty": "moderate",
+		"board": "7~H4|3|OEB____OP_B_"
 	},
 	{
-		"difficulty": "easy",
-		"board": "7~R4|3|OP_B_B_E_O_O"
-	},
-	{
-		"difficulty": "easy",
-		"board": "8~R5|3|P_OP_____P_OEB_"
-	},
-	{
-		"difficulty": "easy",
-		"board": "8~R3|3|OOPB_BO_O"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~H3|3|OO__OOOHB"
-	},
-	{
-		"difficulty": "easy",
-		"board": "7~R3|3|OBP__HOP_"
-	},
-	{
-		"difficulty": "easy",
-		"board": "10~R4|3|OPOPEOOBP_PO"
-	},
-	{
-		"difficulty": "easy",
-		"board": "6~H4|3|OP_B___BP__O"
-	},
-	{
-		"difficulty": "easy",
-		"board": "6~R4|3|OBP____HOEB_"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~R4|3|OPOPEO_BP_PO"
-	},
-	{
-		"difficulty": "easy",
-		"board": "7~H3|3|OOB__OO_O"
-	},
-	{
-		"difficulty": "easy",
-		"board": "6~R4|3|O_PBB____HEP"
-	},
-	{
-		"difficulty": "easy",
-		"board": "8~R3|3|OOBB_HOPO"
-	},
-	{
-		"difficulty": "easy",
-		"board": "10~H3|3|OOOO_BPOP"
-	},
-	{
-		"difficulty": "easy",
-		"board": "7~H4|3|OEB_O__O_O_B"
-	},
-	{
-		"difficulty": "easy",
+		"difficulty": "moderate",
 		"board": "7~R4|3|OP_B____OEBP"
 	},
 	{
-		"difficulty": "easy",
-		"board": "8~R4|3|OP_P_O__PBEO"
-	},
-	{
-		"difficulty": "easy",
-		"board": "10~R4|3|OBOPP_OOOEBP"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~R4|3|OBEOPO__HOPP"
-	},
-	{
-		"difficulty": "easy",
-		"board": "11~R3|3|OOOO_OPBP"
-	},
-	{
-		"difficulty": "easy",
+		"difficulty": "moderate",
 		"board": "6~R4|3|P_O____B_BH_"
 	},
 	{
-		"difficulty": "easy",
-		"board": "7~H4|3|OP_PE__BBP_O"
+		"difficulty": "moderate",
+		"board": "9~R4|3|OP_PEO__P_BB"
 	},
 	{
-		"difficulty": "easy",
-		"board": "7~R3|3|OBP___O_O"
+		"difficulty": "moderate",
+		"board": "8~H4|3|O_PP_E_BO__P"
 	},
 	{
-		"difficulty": "easy",
-		"board": "8~H4|3|OP_B_P_BP__O"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~H4|4|PEP___PBP____OEE"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~R4|3|OO_P__PBPP_B"
-	},
-	{
-		"difficulty": "easy",
-		"board": "10~R4|3|OEBP_OOOP_OP"
-	},
-	{
-		"difficulty": "easy",
-		"board": "8~R4|3|OPOPE__BBO_P"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~R4|3|OPOPEO_BB_PO"
-	},
-	{
-		"difficulty": "easy",
-		"board": "12~R4|3|OPOPP_OBOPPB"
-	},
-	{
-		"difficulty": "easy",
-		"board": "8~R3|3|OBPH_OB_P"
-	},
-	{
-		"difficulty": "easy",
+		"difficulty": "moderate",
 		"board": "7~R4|3|OO_H___B__OB"
 	},
 	{
-		"difficulty": "easy",
-		"board": "8~H3|3|OO___OOHB"
-	},
-	{
-		"difficulty": "easy",
-		"board": "10~R3|3|OOP__BOOP"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~R3|3|OBPH_OBOP"
-	},
-	{
-		"difficulty": "easy",
-		"board": "10~H4|3|OPOPEOOBBO_P"
-	},
-	{
-		"difficulty": "easy",
+		"difficulty": "moderate",
 		"board": "7~R4|3|OP_O____PB_P"
 	},
 	{
-		"difficulty": "easy",
+		"difficulty": "moderate",
+		"board": "8~R4|3|OP_O___EPB_P"
+	},
+	{
+		"difficulty": "moderate",
 		"board": "8~R4|3|OP_B_P_BP_O_"
 	},
 	{
-		"difficulty": "easy",
-		"board": "9~R4|3|OEBP_O_OP_OP"
+		"difficulty": "moderate",
+		"board": "7~H3|3|OEB__HPOB"
 	},
 	{
-		"difficulty": "easy",
-		"board": "11~R4|3|OPOPP__BOPPB"
+		"difficulty": "moderate",
+		"board": "8~H4|3|OPOP____B__P"
 	},
 	{
-		"difficulty": "easy",
-		"board": "7~H3|3|OOBB_HP_O"
+		"difficulty": "moderate",
+		"board": "7~H3|3|OEB__HP_P"
 	},
 	{
-		"difficulty": "easy",
-		"board": "8~H3|3|BPPH_BPOP"
-	},
-	{
-		"difficulty": "easy",
-		"board": "7~R5|3|O_P_B__H_____P_"
-	},
-	{
-		"difficulty": "easy",
-		"board": "7~H4|3|OP_B____P__O"
-	},
-	{
-		"difficulty": "easy",
-		"board": "8~R3|3|OOOB___HO"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~H4|3|OP_B__PBP_PO"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~H4|3|OPOPE_OBBO_P"
-	},
-	{
-		"difficulty": "easy",
+		"difficulty": "moderate",
 		"board": "6~H4|3|P_BH___B__O_"
 	},
 	{
-		"difficulty": "easy",
-		"board": "8~R4|3|OBEO_O__P_OP"
+		"difficulty": "moderate",
+		"board": "6~R3|3|O_O_B_O_H"
 	},
 	{
-		"difficulty": "easy",
-		"board": "8~R3|3|POPB___HP"
+		"difficulty": "moderate",
+		"board": "7~H4|3|OP_O____B__P"
 	},
 	{
-		"difficulty": "easy",
-		"board": "7~H3|3|OHB__OP_B"
+		"difficulty": "moderate",
+		"board": "8~R4|3|OO_O_E_BP__B"
 	},
 	{
-		"difficulty": "easy",
-		"board": "10~H4|3|OO_PP_PBBP_O"
-	},
-	{
-		"difficulty": "easy",
-		"board": "10~R4|3|OOOP__O_OEBP"
-	},
-	{
-		"difficulty": "easy",
-		"board": "6~H4|3|O_EB___H_P_B"
-	},
-	{
-		"difficulty": "easy",
-		"board": "7~H4|3|OEB____O_PH_"
-	},
-	{
-		"difficulty": "easy",
-		"board": "13~H4|3|OPOPOP_OPOBP"
-	},
-	{
-		"difficulty": "easy",
-		"board": "8~H4|4|PO_PP__PB____P__"
-	},
-	{
-		"difficulty": "easy",
-		"board": "8~H4|3|OPOPE__BBO_P"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~R3|3|OOOB__P_O"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~H4|3|OP_OEO___B_P"
-	},
-	{
-		"difficulty": "easy",
+		"difficulty": "moderate",
 		"board": "8~R4|3|OO_O___B__OB"
 	},
 	{
-		"difficulty": "easy",
-		"board": "8~R3|3|BOPH__BPP"
-	},
-	{
-		"difficulty": "easy",
-		"board": "7~H4|3|OEB____P_PEH"
-	},
-	{
-		"difficulty": "easy",
-		"board": "11~H4|3|OO_PP_PBP_PO"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~R4|3|OP_PP__BO_P_"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~H3|3|OOPH_BOBO"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~R4|3|BOPP__PBPEHP"
-	},
-	{
-		"difficulty": "easy",
+		"difficulty": "moderate",
 		"board": "7~R4|3|O__P_B____HP"
 	},
 	{
-		"difficulty": "easy",
-		"board": "7~R5|3|O_O_H___B__O___"
+		"difficulty": "moderate",
+		"board": "7~H3|3|OHB__OP_B"
 	},
 	{
-		"difficulty": "easy",
-		"board": "8~R4|3|OP_OE_B_B_PO"
+		"difficulty": "moderate",
+		"board": "6~H4|3|O_HB___BO__O"
 	},
 	{
-		"difficulty": "easy",
-		"board": "7~H4|3|O_O____OBOB_"
+		"difficulty": "moderate",
+		"board": "7~R4|3|O_O_E__BBO_H"
 	},
 	{
-		"difficulty": "easy",
-		"board": "7~H4|3|OEBB___O_PEH"
+		"difficulty": "moderate",
+		"board": "8~H4|3|OO_OE____B_P"
 	},
 	{
-		"difficulty": "easy",
-		"board": "8~R4|3|OBEOP___H_OP"
+		"difficulty": "moderate",
+		"board": "8~H3|3|OEB__HPPB"
 	},
 	{
-		"difficulty": "easy",
-		"board": "9~R3|3|OOOB__OHO"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~H4|4|OPEP___B_____P_P"
-	},
-	{
-		"difficulty": "easy",
-		"board": "8~R5|3|O_P_P__P_BP__P_"
-	},
-	{
-		"difficulty": "easy",
-		"board": "8~H4|3|OBEO____B_PO"
-	},
-	{
-		"difficulty": "easy",
-		"board": "10~R3|3|OOPB_PPHO"
-	},
-	{
-		"difficulty": "easy",
-		"board": "8~R5|3|O_O_P_B______O_"
-	},
-	{
-		"difficulty": "easy",
-		"board": "12~H4|3|OOOPP_PBBP_O"
-	},
-	{
-		"difficulty": "easy",
-		"board": "10~H3|3|OOOO_BOPH"
-	},
-	{
-		"difficulty": "easy",
-		"board": "9~R3|3|OBPH_OP_P"
-	},
-	{
-		"difficulty": "easy",
-		"board": "10~R4|3|OPOBBPP_PHEP"
-	},
-	{
-		"difficulty": "easy",
-		"board": "11~H4|3|OOEB___PPOPP"
-	},
-	{
-		"difficulty": "easy",
-		"board": "8~H3|3|PO___BPBH"
-	},
-	{
-		"difficulty": "easy",
-		"board": "10~H3|3|PO_P_BPBH"
-	},
-	{
-		"difficulty": "easy",
-		"board": "10~R3|3|BPPH_OPBP"
-	},
-	{
-		"difficulty": "easy",
+		"difficulty": "hard",
 		"board": "7~R4|3|O_O_B____H_O"
 	},
 	{
-		"difficulty": "moderate",
+		"difficulty": "hard",
+		"board": "7~H4|3|OP_B___O_OEB"
+	},
+	{
+		"difficulty": "hard",
+		"board": "7~H4|3|O_HB___O_O__"
+	},
+	{
+		"difficulty": "hard",
+		"board": "8~H4|3|OO_____BO_PB"
+	},
+	{
+		"difficulty": "hard",
+		"board": "8~H4|3|OO_O_E_B__BO"
+	},
+	{
+		"difficulty": "hard",
+		"board": "7~H4|3|O_O_E__BBO_H"
+	},
+	{
+		"difficulty": "hard",
+		"board": "7~H4|3|O_O____OBOB_"
+	},
+	{
+		"difficulty": "hard",
 		"board": "8~H4|3|O__O_B__O__O"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "9~H3|3|OOPH_BB_P"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "14~H4|3|OOEB_OOPPOPP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "8~H3|3|OBH__OP_P"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~R4|3|OP_PP__BOP_P"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~H3|3|OOOB_HP_O"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~R4|3|OBEOPO__HOOP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "13~H4|3|OOOPP_PBP_PO"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~H4|3|OP_B_P_BPO_O"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~R3|3|BOPH__PPP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~H3|3|OOPH_BBOP"
-	},
-	{
-		"difficulty": "moderate",
+		"difficulty": "hard",
 		"board": "8~R4|3|OB_P____O_O_"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "11~R3|3|OOOB__POO"
+		"difficulty": "hard",
+		"board": "7~H4|3|O_O____H_OEB"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "8~R4|3|O_PBB__P_HEP"
+		"difficulty": "hard",
+		"board": "8~H3|3|PO___BPBH"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "7~H4|3|OEB____H_P_P"
+		"difficulty": "hard",
+		"board": "10~H4|3|OP_OP__OB__B"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "9~H3|3|PO___PPBH"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "8~R4|3|OOEB__B_H_OO"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "11~R4|3|OPHOEOOBB_PO"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "11~R4|3|OPHPEOPBB_PO"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~R4|3|OOPOB_OEOP_B"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~R4|3|OBEOPO__H_OP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "13~H4|3|OOEB_O_PPOPP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "11~R4|3|OO_PP__BOPPB"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "8~R5|3|O___P_____P_B_P"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~H4|3|OOEB___POP_B"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~R4|3|OO_O__PBPP_B"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "14~H4|3|OOOPP_PBBPOO"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~R4|3|OOPOB__EP_OB"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~H4|3|OOEB___OP_O_"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "11~H4|3|OOPPOO_OB_PB"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~H3|3|POPO_BPBH"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~R4|3|OOEBO__OPOB_"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "11~H3|3|PO_P_PPBH"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "8~H4|3|OO_P___BP_PO"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "8~R4|3|OO_O__BEP_OB"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~H4|3|OOPO____B_PB"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "14~R4|3|OOOPP_OBOPPB"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~R4|3|OPHPE_PBB_PO"
-	},
-	{
-		"difficulty": "moderate",
+		"difficulty": "hard",
 		"board": "8~R4|3|OP_B____OP_B"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "11~R3|3|POPB_PPHP"
+		"difficulty": "hard",
+		"board": "9~H4|3|OP_BE__OO_P_"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "9~R4|3|OOEB__BOH_OO"
+		"difficulty": "hard",
+		"board": "9~H4|3|OOEB___PO_PB"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "9~H4|4|OP_OE____P____B_"
+		"difficulty": "hard",
+		"board": "8~H4|3|O_O____O_OEB"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "11~H4|3|OO_OP_PBBO_P"
+		"difficulty": "hard",
+		"board": "8~R4|3|O_OBB__E_O_O"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "10~R4|3|OPHPE_OBB_PO"
+		"difficulty": "hard",
+		"board": "10~H4|3|OOPB___BOO__"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "9~R4|3|OB_O_O__OEBO"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "8~H4|3|OO_H____OEBO"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "8~H4|3|OP_B_____O_O"
-	},
-	{
-		"difficulty": "moderate",
+		"difficulty": "hard",
 		"board": "9~R4|3|O__O____PB_P"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "9~R5|3|OPP_P_____P__B_"
+		"difficulty": "hard",
+		"board": "8~H4|3|OP_B_____O_O"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "9~R4|3|OBHP___OO_EB"
+		"difficulty": "hard",
+		"board": "8~R4|3|OEHB_B__O__P"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "8~H4|3|O_EB_O_H_P_B"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~H4|3|OO_O___BBPOP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "11~H3|3|OOOB_HPPO"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "11~H3|3|OPPH_BPOP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~R4|3|BP_BP__OPEHP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "13~R4|3|OOOPP__BOPPB"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "12~H4|3|OOPB_OPOPEHP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "8~H4|3|OP_B___BO__O"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~H3|3|OOPH_BP_P"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "12~R4|3|OBBPO_P_O_PO"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~R4|3|OOEBP__OHOBO"
-	},
-	{
-		"difficulty": "moderate",
+		"difficulty": "hard",
 		"board": "7~H4|3|O_P____H_P_B"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "12~H4|3|OOEBOO_PP_OB"
+		"difficulty": "hard",
+		"board": "9~H4|3|OHBB___OO__O"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "12~R4|3|OPOPP__BOP_P"
+		"difficulty": "hard",
+		"board": "10~R4|3|OP_BE__BO_OP"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "8~H4|3|O__P___O_HB_"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~R4|3|OP_BB_PE_H_O"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~R4|3|OOEB___OOBHP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~H4|4|O_O_E_B_____O_EP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~H4|3|OO_O____OEBO"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~R4|3|OP_OP__BO_P_"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "11~H4|3|OOEBO__PO_PB"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "11~H4|3|OOEB___PO_PP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~H3|3|OBH__OPOP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "14~R4|3|OBBPO_POO_PO"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "12~H4|3|OO_P__PBP_PO"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "12~H4|3|OOEBO__PO_OP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "12~H4|3|OEBBOPOOP_OH"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~R5|3|OO_POE_B_EP_P_P"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "8~H4|4|O_P____O____B_P_"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~H4|3|OEBH___PP_P_"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~H4|3|OP_B___O_HEP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~R4|3|OP_BB_PEPH_O"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~H4|3|OOEB___OH_OB"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~R5|3|O_P_PP_____OEBP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "15~R4|3|OPOPP_OBOPOP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "12~H3|3|OOPH_BPOP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "11~R4|3|OP_OP__BOP_P"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~R4|3|OP_OB_HEO_PB"
-	},
-	{
-		"difficulty": "moderate",
+		"difficulty": "hard",
 		"board": "9~R4|3|OHBB___OO_O_"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "12~H3|3|POPP_PPBH"
+		"difficulty": "hard",
+		"board": "10~R4|3|OBEP____O_PO"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "11~H4|3|OO_____PO_PB"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "9~H4|3|OHB____OBO_O"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "12~H4|3|OOPOO__PB_OB"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "8~H4|3|O_HB___BP__O"
-	},
-	{
-		"difficulty": "moderate",
+		"difficulty": "hard",
 		"board": "9~R4|3|OP_B___OOP_B"
 	},
 	{
-		"difficulty": "moderate",
-		"board": "13~H4|3|OOEB_O_PO_PP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "14~R4|3|OPOPP__BOPOP"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "11~H4|4|PO_P___PB____P__"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "12~H4|3|OBOB_POOPPEH"
-	},
-	{
-		"difficulty": "moderate",
-		"board": "10~R4|3|OBOB____OPOP"
+		"difficulty": "hard",
+		"board": "8~H4|3|P_O____B_PEH"
 	},
 	{
 		"difficulty": "hard",
-		"board": "14~H4|3|OOEB_O_OPOPP"
-	},
-	{
-		"difficulty": "hard",
-		"board": "10~H4|3|OO_____OO_OB"
+		"board": "10~R4|3|O_OPB__E_O_O"
 	},
 	{
 		"difficulty": "hard",
@@ -888,7 +656,15 @@ export const puzzles = [
 	},
 	{
 		"difficulty": "hard",
-		"board": "12~H4|3|OEBH_PPPB_PP"
+		"board": "9~H4|3|OOEB___OH_OB"
+	},
+	{
+		"difficulty": "hard",
+		"board": "10~R4|3|OOP_E__HBOB_"
+	},
+	{
+		"difficulty": "hard",
+		"board": "9~R4|3|OO_H___BOEOB"
 	},
 	{
 		"difficulty": "hard",
@@ -896,55 +672,19 @@ export const puzzles = [
 	},
 	{
 		"difficulty": "hard",
-		"board": "10~H4|4|O_O___B____OO___"
+		"board": "9~R4|3|OP_P___HOEB_"
 	},
 	{
 		"difficulty": "hard",
-		"board": "10~R5|3|O_P_O__P__PB__P"
+		"board": "10~H4|3|OOB____OOOB_"
 	},
 	{
 		"difficulty": "hard",
-		"board": "10~H4|4|O_O____P____OEB_"
+		"board": "10~H4|3|OP_OE__BO_O_"
 	},
 	{
 		"difficulty": "hard",
-		"board": "11~H4|3|OOPO___PO_PB"
-	},
-	{
-		"difficulty": "hard",
-		"board": "9~H4|3|OO_O___BBO_O"
-	},
-	{
-		"difficulty": "hard",
-		"board": "12~R5|3|O_PPPP_____OEBP"
-	},
-	{
-		"difficulty": "hard",
-		"board": "9~H4|3|O_OP____OEBH"
-	},
-	{
-		"difficulty": "hard",
-		"board": "14~H4|3|OO_PP_PBPO_O"
-	},
-	{
-		"difficulty": "hard",
-		"board": "9~H4|3|O_O____OO_HB"
-	},
-	{
-		"difficulty": "hard",
-		"board": "13~H4|3|OOBBPP_OPPEH"
-	},
-	{
-		"difficulty": "hard",
-		"board": "12~H4|3|OOEBP_OHO_PB"
-	},
-	{
-		"difficulty": "hard",
-		"board": "12~H4|3|POPP__OBPEHP"
-	},
-	{
-		"difficulty": "hard",
-		"board": "13~H4|3|OBBOPP_PPPEH"
+		"board": "9~H4|3|P_B____O_OBH"
 	},
 	{
 		"difficulty": "hard",
@@ -956,63 +696,19 @@ export const puzzles = [
 	},
 	{
 		"difficulty": "hard",
-		"board": "13~H4|3|OOEB_PPPP_OH"
+		"board": "10~R4|3|OO_O___BOEOB"
 	},
 	{
 		"difficulty": "hard",
-		"board": "11~H4|3|OOEBO__HBO_O"
+		"board": "11~R4|3|OOOH___BOEOB"
+	},
+	{
+		"difficulty": "hard",
+		"board": "9~H4|3|O_O_E__HBP_B"
 	},
 	{
 		"difficulty": "hard",
 		"board": "10~H4|3|OOEB___OO_OB"
-	},
-	{
-		"difficulty": "hard",
-		"board": "9~R5|3|O_P_PB_____HEP_"
-	},
-	{
-		"difficulty": "hard",
-		"board": "11~R5|3|O_O_P_O___PBEO_"
-	},
-	{
-		"difficulty": "hard",
-		"board": "13~H4|3|OBEO_PPPO_OH"
-	},
-	{
-		"difficulty": "hard",
-		"board": "16~H4|3|OOOPP_PBPO_O"
-	},
-	{
-		"difficulty": "hard",
-		"board": "10~H4|3|OOEB___OO_PB"
-	},
-	{
-		"difficulty": "hard",
-		"board": "13~R4|3|OPOPP__BOP_O"
-	},
-	{
-		"difficulty": "hard",
-		"board": "11~H4|3|OOEB___OP_OO"
-	},
-	{
-		"difficulty": "hard",
-		"board": "14~H4|3|OOEBOO_OPPHP"
-	},
-	{
-		"difficulty": "hard",
-		"board": "14~H4|3|OOBOPP_PPPEH"
-	},
-	{
-		"difficulty": "hard",
-		"board": "13~R5|3|O_O_P___OPOEBEP"
-	},
-	{
-		"difficulty": "hard",
-		"board": "10~R5|3|OBEPO_____O_P_P"
-	},
-	{
-		"difficulty": "hard",
-		"board": "9~H4|3|O_EB___HPP_B"
 	},
 	{
 		"difficulty": "hard",
@@ -1024,7 +720,15 @@ export const puzzles = [
 	},
 	{
 		"difficulty": "hard",
-		"board": "13~R5|3|OPP_OP____P_BP_"
+		"board": "10~R4|3|OO_OE__BO_H_"
+	},
+	{
+		"difficulty": "hard",
+		"board": "11~R4|3|OOPOE__HBOB_"
+	},
+	{
+		"difficulty": "hard",
+		"board": "9~R4|3|OEB____HPP_B"
 	},
 	{
 		"difficulty": "hard",
@@ -1032,23 +736,7 @@ export const puzzles = [
 	},
 	{
 		"difficulty": "hard",
-		"board": "11~H4|3|OEBH_P_PB_PP"
-	},
-	{
-		"difficulty": "hard",
-		"board": "12~H4|3|OEBB__OHPOPP"
-	},
-	{
-		"difficulty": "hard",
-		"board": "13~H4|3|OOPOO__PO_PB"
-	},
-	{
-		"difficulty": "hard",
-		"board": "13~H4|3|OOEB_OOHO_PB"
-	},
-	{
-		"difficulty": "hard",
-		"board": "11~H4|3|POPP___BPEHP"
+		"board": "10~H4|3|OOEB___OO_PB"
 	},
 	{
 		"difficulty": "hard",
@@ -1060,231 +748,147 @@ export const puzzles = [
 	},
 	{
 		"difficulty": "hard",
-		"board": "10~H4|3|OPEH___PB_PB"
+		"board": "11~R4|3|OO_OE__BOP_B"
 	},
 	{
 		"difficulty": "hard",
-		"board": "11~R5|3|OBEO__O___P_O_O"
+		"board": "10~R4|3|OEB____HPP_P"
 	},
 	{
 		"difficulty": "hard",
-		"board": "12~H4|3|OOEB_O_OO_PB"
+		"board": "10~R4|3|OO_O___BPEH_"
 	},
 	{
 		"difficulty": "hard",
-		"board": "10~H4|3|OOHB___OO_OB"
+		"board": "10~H4|3|OO_H_E_B_O_O"
 	},
 	{
-		"difficulty": "hard",
-		"board": "11~H4|3|OPOB___PPPEH"
+		"difficulty": "insane",
+		"board": "9~H4|3|OO_H___BO__O"
 	},
 	{
-		"difficulty": "hard",
-		"board": "10~H4|4|OO_O________P_B_"
-	},
-	{
-		"difficulty": "hard",
-		"board": "10~H4|3|PO_P___BPEHP"
-	},
-	{
-		"difficulty": "hard",
-		"board": "12~H4|3|OOEB___OO_PP"
-	},
-	{
-		"difficulty": "hard",
-		"board": "12~R4|3|OP_OP__BOP_O"
-	},
-	{
-		"difficulty": "hard",
-		"board": "15~R4|3|OOPOB__PPOPO"
-	},
-	{
-		"difficulty": "hard",
-		"board": "10~H4|3|OP_O___BPEHP"
-	},
-	{
-		"difficulty": "hard",
-		"board": "12~H4|3|OPEH_P_OB_PB"
-	},
-	{
-		"difficulty": "hard",
+		"difficulty": "insane",
 		"board": "9~R4|3|O_HBB____O_P"
 	},
 	{
-		"difficulty": "hard",
-		"board": "13~R4|3|OOO____BOOPB"
+		"difficulty": "insane",
+		"board": "10~H4|3|OOHB___OO_OB"
 	},
 	{
-		"difficulty": "hard",
-		"board": "13~H4|3|OOEBO__OH_OP"
+		"difficulty": "insane",
+		"board": "12~R4|3|OOH_E__BO_OO"
 	},
 	{
-		"difficulty": "hard",
-		"board": "12~H4|4|OEPB_P______PP_P"
+		"difficulty": "insane",
+		"board": "10~H4|3|OP_O____B_PO"
 	},
 	{
-		"difficulty": "hard",
-		"board": "9~R5|3|O_P_O_____P_B_P"
-	},
-	{
-		"difficulty": "hard",
-		"board": "13~H4|3|OEBB__OHPPPP"
-	},
-	{
-		"difficulty": "hard",
-		"board": "11~H4|3|OOEB___OO_OH"
-	},
-	{
-		"difficulty": "hard",
-		"board": "15~R4|3|OO_OB_PB_OOP"
-	},
-	{
-		"difficulty": "hard",
-		"board": "11~H4|3|OOEB___PO_OH"
-	},
-	{
-		"difficulty": "hard",
+		"difficulty": "insane",
 		"board": "12~R4|3|OOO____OOHBB"
 	},
 	{
-		"difficulty": "hard",
-		"board": "14~H4|3|OOEBOO_PP_OH"
-	},
-	{
-		"difficulty": "hard",
+		"difficulty": "insane",
 		"board": "11~R4|3|OOH____BO_OO"
 	},
 	{
-		"difficulty": "hard",
-		"board": "12~H4|3|OOEBP__PP_OH"
+		"difficulty": "insane",
+		"board": "11~H4|3|OO_O_E_BO__O"
 	},
 	{
-		"difficulty": "hard",
-		"board": "12~H4|3|OOEBP__OP_OH"
+		"difficulty": "insane",
+		"board": "10~H4|3|OO_O___BO__O"
 	},
 	{
-		"difficulty": "hard",
-		"board": "11~R5|3|O___O_____P_B_P"
+		"difficulty": "insane",
+		"board": "11~R4|3|OEB_O__HPP_B"
 	},
 	{
-		"difficulty": "hard",
-		"board": "11~H4|3|OOEB___PO_PH"
+		"difficulty": "insane",
+		"board": "11~R4|3|OP_BH__EB_PP"
 	},
 	{
-		"difficulty": "hard",
-		"board": "11~H4|3|OO_O___BPP_O"
+		"difficulty": "insane",
+		"board": "11~H4|3|OP_BE__HO_P_"
 	},
 	{
-		"difficulty": "hard",
+		"difficulty": "insane",
+		"board": "12~R4|3|OBEOH__OB_PP"
+	},
+	{
+		"difficulty": "insane",
+		"board": "11~H4|3|P_O_E__PP_BH"
+	},
+	{
+		"difficulty": "insane",
+		"board": "13~R4|3|OEB_O__HPPPB"
+	},
+	{
+		"difficulty": "insane",
+		"board": "12~R4|3|OEB_O__HPP_P"
+	},
+	{
+		"difficulty": "insane",
+		"board": "12~R4|3|OO_OP__BPEH_"
+	},
+	{
+		"difficulty": "insane",
+		"board": "10~H4|3|P_O_E__BP_BH"
+	},
+	{
+		"difficulty": "insane",
 		"board": "12~H4|3|OO_____OO_PB"
 	},
 	{
-		"difficulty": "hard",
+		"difficulty": "insane",
+		"board": "12~R4|3|OP_BH__EP_PP"
+	},
+	{
+		"difficulty": "insane",
 		"board": "10~H4|3|OP_B___HP__O"
 	},
 	{
-		"difficulty": "hard",
-		"board": "12~H4|3|OOPO___OO_PB"
-	},
-	{
-		"difficulty": "hard",
-		"board": "12~H4|3|OO_OO__BBP_O"
-	},
-	{
-		"difficulty": "hard",
-		"board": "12~H4|3|OOEB_O_HO_PB"
-	},
-	{
-		"difficulty": "hard",
-		"board": "11~H4|3|O_O____OP_BH"
-	},
-	{
-		"difficulty": "hard",
-		"board": "14~R4|3|OOPOB__PO_PO"
-	},
-	{
-		"difficulty": "hard",
+		"difficulty": "insane",
 		"board": "9~H4|3|P_O____BP_BH"
 	},
 	{
-		"difficulty": "hard",
-		"board": "14~R4|3|OB_P__OOOP_O"
+		"difficulty": "insane",
+		"board": "12~R4|3|BOPPH__EBP_P"
 	},
 	{
-		"difficulty": "hard",
-		"board": "10~H4|3|OP_B___H_P_P"
+		"difficulty": "insane",
+		"board": "11~H4|3|O_O____OP_BH"
 	},
 	{
-		"difficulty": "hard",
-		"board": "10~H4|3|OO_O___HBP_B"
-	},
-	{
-		"difficulty": "hard",
-		"board": "9~H4|4|P_O________HP_B_"
-	},
-	{
-		"difficulty": "hard",
-		"board": "11~H4|3|OO_O___BBP_O"
-	},
-	{
-		"difficulty": "hard",
-		"board": "14~H4|3|OO__O__OO_PB"
-	},
-	{
-		"difficulty": "hard",
-		"board": "12~R4|3|O_OP___BO_OP"
-	},
-	{
-		"difficulty": "hard",
-		"board": "10~H4|4|OO_O_______BO_O_"
-	},
-	{
-		"difficulty": "hard",
-		"board": "12~H4|3|OOHB___OO_O_"
-	},
-	{
-		"difficulty": "hard",
-		"board": "14~R5|3|OPP_P____PPOBEO"
-	},
-	{
-		"difficulty": "hard",
+		"difficulty": "insane",
 		"board": "12~R4|3|OBH____PP_O_"
 	},
 	{
-		"difficulty": "hard",
-		"board": "11~H4|3|OOEB___HP_OB"
+		"difficulty": "insane",
+		"board": "12~H4|3|OOHB___OO_O_"
 	},
 	{
-		"difficulty": "hard",
-		"board": "14~H4|4|PO_P___PB____O__"
-	},
-	{
-		"difficulty": "hard",
-		"board": "12~H4|3|OO_OO__HBP_B"
-	},
-	{
-		"difficulty": "hard",
+		"difficulty": "insane",
 		"board": "11~R4|3|OP_BH___BP_P"
 	},
 	{
-		"difficulty": "hard",
-		"board": "16~R5|3|OPP_P_O__PPOBEO"
-	},
-	{
-		"difficulty": "hard",
-		"board": "13~H4|3|OOHBO__OOP_B"
+		"difficulty": "insane",
+		"board": "11~H4|3|OOEB___HP_OB"
 	},
 	{
 		"difficulty": "insane",
-		"board": "13~H4|3|OOEB__OHP_PB"
+		"board": "11~H4|3|OOHB___OP__B"
 	},
 	{
 		"difficulty": "insane",
-		"board": "14~R5|3|OPO_P__P_BPO_P_"
+		"board": "13~H4|3|OOEBO__HP_OB"
 	},
 	{
 		"difficulty": "insane",
 		"board": "11~R4|3|O_OPB___O_HB"
+	},
+	{
+		"difficulty": "insane",
+		"board": "13~H4|3|OOHBO__OP__B"
 	},
 	{
 		"difficulty": "insane",
@@ -1296,47 +900,23 @@ export const puzzles = [
 	},
 	{
 		"difficulty": "insane",
-		"board": "11~R5|3|O_H______OP_OB_"
+		"board": "13~H4|3|PPBHE__BP_O_"
 	},
 	{
 		"difficulty": "insane",
-		"board": "11~R5|3|O_PH_____PP_B__"
+		"board": "12~H4|3|O_HB___P_P_P"
 	},
 	{
 		"difficulty": "insane",
-		"board": "13~R5|3|OP__OO_____B_PP"
+		"board": "13~H4|3|PPEP___BP_OH"
 	},
 	{
 		"difficulty": "insane",
-		"board": "13~R4|3|OO_O___BO_OP"
+		"board": "13~H4|3|OO_O_E_BOO_H"
 	},
 	{
 		"difficulty": "insane",
-		"board": "13~R5|3|OO__O______OB_P"
-	},
-	{
-		"difficulty": "insane",
-		"board": "15~R5|3|OP_B_P___PO__PO"
-	},
-	{
-		"difficulty": "insane",
-		"board": "12~H4|3|OOP____HBP_B"
-	},
-	{
-		"difficulty": "insane",
-		"board": "12~H4|3|PPBH___BP_O_"
-	},
-	{
-		"difficulty": "insane",
-		"board": "13~R5|3|O_O______OP_PB_"
-	},
-	{
-		"difficulty": "insane",
-		"board": "13~H4|3|OOHB___PP_OB"
-	},
-	{
-		"difficulty": "insane",
-		"board": "15~R5|3|OBEOP____PP_P_O"
+		"board": "13~H4|3|OOEB___HPPPB"
 	},
 	{
 		"difficulty": "insane",
@@ -1344,15 +924,23 @@ export const puzzles = [
 	},
 	{
 		"difficulty": "insane",
-		"board": "16~H4|3|OOPOOO_HBP_B"
+		"board": "12~R4|3|OBHB____PO_P"
 	},
 	{
 		"difficulty": "insane",
-		"board": "12~H4|3|OO_O___BPO_H"
+		"board": "16~H4|3|PPO_E__BPPBH"
 	},
 	{
 		"difficulty": "insane",
-		"board": "12~H4|3|OP_B___HPP_P"
+		"board": "14~H4|3|POB__O_OP_BH"
+	},
+	{
+		"difficulty": "insane",
+		"board": "12~H4|3|PPBH___BP_O_"
+	},
+	{
+		"difficulty": "insane",
+		"board": "13~H4|3|O_OH___BPPEO"
 	},
 	{
 		"difficulty": "insane",
@@ -1360,75 +948,19 @@ export const puzzles = [
 	},
 	{
 		"difficulty": "insane",
-		"board": "13~H4|4|O_PP___O____BEP_"
+		"board": "13~H4|3|OOEB___HP_PP"
 	},
 	{
 		"difficulty": "insane",
-		"board": "13~R5|3|OPP_PB_____HEPP"
+		"board": "14~H4|3|OOEBO__HP_PB"
 	},
 	{
 		"difficulty": "insane",
-		"board": "16~R4|3|OBHP___PPPBP"
+		"board": "13~H4|3|O_HB___PPP_P"
 	},
 	{
 		"difficulty": "insane",
-		"board": "12~R4|3|OBHB____PO_P"
-	},
-	{
-		"difficulty": "insane",
-		"board": "15~H4|3|OOHBO__PP_OB"
-	},
-	{
-		"difficulty": "insane",
-		"board": "12~R5|3|O_P_PB_____HEPP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "15~H4|3|PPO____PPPBH"
-	},
-	{
-		"difficulty": "insane",
-		"board": "17~H4|3|OOHBPO_OPOPB"
-	},
-	{
-		"difficulty": "insane",
-		"board": "15~R4|3|OBHPP___PP_P"
-	},
-	{
-		"difficulty": "insane",
-		"board": "16~R5|3|OBEO_O___PO_PO_"
-	},
-	{
-		"difficulty": "insane",
-		"board": "16~R5|3|OBEOP____PPPO_O"
-	},
-	{
-		"difficulty": "insane",
-		"board": "14~H4|3|O_P_P__PO_HB"
-	},
-	{
-		"difficulty": "insane",
-		"board": "13~R5|3|OBH______PP_O__"
-	},
-	{
-		"difficulty": "insane",
-		"board": "16~H4|3|OP_P_B_HPPPB"
-	},
-	{
-		"difficulty": "insane",
-		"board": "16~R5|3|OP_OP__P_BPOP_O"
-	},
-	{
-		"difficulty": "insane",
-		"board": "14~H4|3|OP_P_B_HPP_B"
-	},
-	{
-		"difficulty": "insane",
-		"board": "18~H4|3|OOHOPO_PBP_B"
-	},
-	{
-		"difficulty": "insane",
-		"board": "19~H4|3|POBHO_OOPPBP"
+		"board": "14~H4|3|PPO____BPPBH"
 	},
 	{
 		"difficulty": "insane",
@@ -1440,87 +972,11 @@ export const puzzles = [
 	},
 	{
 		"difficulty": "insane",
-		"board": "15~H4|3|PPB_O__OP_BH"
+		"board": "13~H4|3|POB____OP_BH"
 	},
 	{
 		"difficulty": "insane",
-		"board": "13~H4|4|OP_B____O____O_O"
-	},
-	{
-		"difficulty": "insane",
-		"board": "16~R4|3|OO_PO__OOHBB"
-	},
-	{
-		"difficulty": "insane",
-		"board": "16~H4|3|OOHOP__PBP_B"
-	},
-	{
-		"difficulty": "insane",
-		"board": "19~R4|3|BHBPO_POPOPP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "15~H4|3|OOHB___PPO_O"
-	},
-	{
-		"difficulty": "insane",
-		"board": "18~R4|3|OBHPP__OPPBP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "14~H4|3|OP_PB__HOP_P"
-	},
-	{
-		"difficulty": "insane",
-		"board": "18~R4|3|OPPPP__OOHBB"
-	},
-	{
-		"difficulty": "insane",
-		"board": "20~H4|3|PPBHOP_OPPB_"
-	},
-	{
-		"difficulty": "insane",
-		"board": "13~R5|3|O_P_OB_____HEPP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "13~R5|3|OOEB_____HP_O_P"
-	},
-	{
-		"difficulty": "insane",
-		"board": "18~R5|3|OOOPPP_____OEBO"
-	},
-	{
-		"difficulty": "insane",
-		"board": "18~R5|3|OP_BPPO___O__PO"
-	},
-	{
-		"difficulty": "insane",
-		"board": "20~H4|3|POBHOP_OPPBP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "17~R4|3|OBHBP___PPOP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "14~H4|4|OB_____OP___O_P_"
-	},
-	{
-		"difficulty": "insane",
-		"board": "19~H4|3|PPBHO__OPPP_"
-	},
-	{
-		"difficulty": "insane",
-		"board": "18~H4|3|POBHO__OPPBP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "14~R5|3|OOP_PB_____HEPP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "17~H4|3|OOHBP__PO_P_"
+		"board": "15~H4|3|OPP____PO_HB"
 	},
 	{
 		"difficulty": "insane",
@@ -1528,150 +984,10 @@ export const puzzles = [
 	},
 	{
 		"difficulty": "insane",
-		"board": "18~H4|3|PPBHO__OPPB_"
-	},
-	{
-		"difficulty": "insane",
-		"board": "13~H4|4|OO_P_____H___B_P"
-	},
-	{
-		"difficulty": "insane",
-		"board": "16~R5|3|O_O_O_____O_BPP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "17~R4|3|OHBBP__OO_PP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "18~R5|3|OP_B_P___OO__PO"
-	},
-	{
-		"difficulty": "insane",
-		"board": "22~H4|3|PPO_OP_OPPBH"
-	},
-	{
-		"difficulty": "insane",
-		"board": "17~R4|3|OOPP___OOHBB"
-	},
-	{
-		"difficulty": "insane",
-		"board": "21~R4|3|OOPPP_POOHBB"
-	},
-	{
-		"difficulty": "insane",
-		"board": "21~R4|3|OOPPPO_OOHBB"
-	},
-	{
-		"difficulty": "insane",
-		"board": "21~H4|3|OPOPOP_OPPBH"
-	},
-	{
-		"difficulty": "insane",
-		"board": "19~R4|3|OOPPO__OOHBB"
-	},
-	{
-		"difficulty": "insane",
-		"board": "19~H4|3|OOPOP__POOHB"
-	},
-	{
-		"difficulty": "insane",
-		"board": "19~H4|3|OOHBP__PPOPO"
-	},
-	{
-		"difficulty": "insane",
-		"board": "18~R5|3|OBEO_____PPPO_O"
-	},
-	{
-		"difficulty": "insane",
-		"board": "20~H4|3|PPO_O__OPPBH"
-	},
-	{
-		"difficulty": "insane",
-		"board": "19~R4|3|OOPPP__OOHBB"
-	},
-	{
-		"difficulty": "insane",
-		"board": "15~R5|3|OOP_OB_____HEPP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "20~R4|3|OBHPPP__PP_O"
-	},
-	{
-		"difficulty": "insane",
-		"board": "17~R5|3|OB_P_____OOPO_O"
-	},
-	{
-		"difficulty": "insane",
-		"board": "18~R4|3|OBHPP___PP_O"
+		"board": "15~H4|3|POBH___OP_BP"
 	},
 	{
 		"difficulty": "insane",
 		"board": "16~R4|3|OBHP____PP_O"
-	},
-	{
-		"difficulty": "insane",
-		"board": "23~R4|3|OOPP__PPPHBO"
-	},
-	{
-		"difficulty": "insane",
-		"board": "15~H4|4|O_PP_____H___B_P"
-	},
-	{
-		"difficulty": "insane",
-		"board": "21~R5|3|OB_PO___OPOP__O"
-	},
-	{
-		"difficulty": "insane",
-		"board": "17~R5|3|O_O_O_____O_BOP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "19~H4|4|OP_O___PB_____PP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "25~R4|3|OOPPO_PPPHBO"
-	},
-	{
-		"difficulty": "insane",
-		"board": "19~R4|3|OOPP____PHBO"
-	},
-	{
-		"difficulty": "insane",
-		"board": "21~R4|3|OOPP___PPHBO"
-	},
-	{
-		"difficulty": "insane",
-		"board": "18~H4|4|OO_O___PO_____BO"
-	},
-	{
-		"difficulty": "insane",
-		"board": "17~R5|3|OBH_P_____P_P_P"
-	},
-	{
-		"difficulty": "insane",
-		"board": "23~R4|3|OOPPO__PPHBO"
-	},
-	{
-		"difficulty": "insane",
-		"board": "21~H4|4|OP_O___PB_____OP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "20~R5|3|O_P_P_____PPBHP"
-	},
-	{
-		"difficulty": "insane",
-		"board": "19~R5|3|O_P_O_____PHB_P"
-	},
-	{
-		"difficulty": "insane",
-		"board": "21~R5|3|OOP_O_____PHB_P"
-	},
-	{
-		"difficulty": "insane",
-		"board": "22~R5|3|O_P_O_____PPBHP"
 	}
 ];
