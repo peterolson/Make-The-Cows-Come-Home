@@ -127,9 +127,10 @@
 
 		const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 		svgElement.style.position = 'absolute';
+		svgElement.style.overflow = 'visible';
 		svgElement.innerHTML = `<line x1="0%" y1="${slopeDown ? 0 : 100}%" x2="100%" y2="${
 			slopeDown ? 100 : 0
-		}%" style="stroke:rgba(99, 88, 77, 0.9);stroke-width:10" stroke-linecap="round" />`;
+		}%" style="stroke:rgba(99, 88, 77, 0.9);stroke-width:6px" stroke-linecap="round" />`;
 		boardNode.appendChild(svgElement);
 		boardNode.appendChild(imgCopy);
 		animatingElements.add(svgElement);
@@ -141,16 +142,16 @@
 
 		const left2 = Math.min(x1, x2) + 'px';
 		const top2 = Math.min(y1, y2) + 'px';
-		const width2 = Math.max(10, Math.abs(x2 - x1)) + 'px';
-		const height2 = Math.max(10, Math.abs(y2 - y1)) + 'px';
+		const width2 = Math.max(1, Math.abs(x2 - x1)) + 'px';
+		const height2 = Math.max(1, Math.abs(y2 - y1)) + 'px';
 
 		let lineAnimation = svgElement.animate(
 			[
 				{
 					left: x1 + 'px',
 					top: y1 + 'px',
-					width: '10px',
-					height: '10px'
+					width: '1px',
+					height: '1px'
 				},
 				{
 					left: left2,
@@ -171,8 +172,8 @@
 
 		const left3 = Math.min(x2, x3) + 'px';
 		const top3 = Math.min(y2, y3) + 'px';
-		const width3 = Math.max(10, Math.abs(x3 - x2)) + 'px';
-		const height3 = Math.max(10, Math.abs(y3 - y2)) + 'px';
+		const width3 = Math.max(1, Math.abs(x3 - x2)) + 'px';
+		const height3 = Math.max(1, Math.abs(y3 - y2)) + 'px';
 
 		lineAnimation = svgElement.animate(
 			[
