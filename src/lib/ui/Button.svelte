@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let onClick: () => void;
+	export let onClick: () => void = () => {};
 	export let disabled: boolean = false;
 	export let icon: string = '';
 </script>

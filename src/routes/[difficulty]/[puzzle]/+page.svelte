@@ -1,26 +1,33 @@
 <script lang="ts">
 	import Puzzle from '$lib/puzzle/Puzzle.svelte';
 	import { puzzles } from '$lib/puzzle/PuzzleList';
+	import Button from '$lib/ui/Button.svelte';
+	import Header from '$lib/ui/Header.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
 
 <div class="column">
-	<div class="header">
-		<div>
-			<a href="/{data.key}">=</a>
+	<Header>
+		{data.title}
+		<slot slot="left">
+			<a href="/"><Button icon="home_page" /></a>
+			<a href="/{data.key}"><Button icon="menu" /></a>
 			{#if data.prevPuzzle}
-				<a href="/{data.key}/{data.prevPuzzle}">←</a>
+				<a href="/{data.key}/{data.prevPuzzle}">
+					<Button icon="previous" />
+				</a>
 			{/if}
-		</div>
-		<h1>{data.title}</h1>
-		<div>
+		</slot>
+		<slot slot="right">
 			{#if data.nextPuzzle}
-				<a href="/{data.key}/{data.nextPuzzle}">#{data.index + 2} →</a>
+				<a href="/{data.key}/{data.nextPuzzle}">
+					<Button icon="next" />
+				</a>
 			{/if}
-		</div>
-	</div>
+		</slot>
+	</Header>
 	<div class="board">
 		{#key data.puzzleString}
 			<Puzzle puzzleString={data.puzzleString} />
@@ -34,24 +41,6 @@
 		flex-direction: column;
 		height: 100%;
 		overflow: hidden;
-	}
-	.header {
-		height: 64px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		box-sizing: border-box;
-		background-color: var(--color-theme-1);
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		margin-bottom: 3px;
-		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-		padding: 0 16px;
-	}
-
-	.header h1,
-	.header a {
-		font-size: 22px;
-		color: rgba(255, 255, 255, 0.95);
 	}
 
 	.board {

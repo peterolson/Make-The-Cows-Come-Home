@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { difficulties } from '$lib/puzzle/PuzzleListNames';
+	import Header from '$lib/ui/Header.svelte';
 </script>
 
 <svelte:head>
@@ -7,7 +8,7 @@
 	<meta name="description" content="Puzzle game" />
 </svelte:head>
 
-<h1>Make the cows come home</h1>
+<Header>Make the cows come home</Header>
 <div class="links">
 	{#each difficulties as difficulty}
 		<div>

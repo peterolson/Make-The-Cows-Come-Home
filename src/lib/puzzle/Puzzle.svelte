@@ -382,6 +382,7 @@
 		align-items: center;
 		padding: 8px;
 		box-sizing: border-box;
-		height: 56px;
+		height: 52px;
+		margin-top: 4px;
 	}
 </style>

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { puzzles } from '$lib/puzzle/PuzzleList';
+	import Button from '$lib/ui/Button.svelte';
+	import Header from '$lib/ui/Header.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -10,9 +11,12 @@
 	<meta name="description" content="Puzzle game" />
 </svelte:head>
 
-<a href="/">Home</a>
-
-<h1>{data.name}</h1>
+<Header>
+	{data.name}
+	<slot slot="left">
+		<a href="/"><Button icon="home_page" /></a>
+	</slot>
+</Header>
 
 {#each data.puzzleList as puzzle, i}
 	<div>
