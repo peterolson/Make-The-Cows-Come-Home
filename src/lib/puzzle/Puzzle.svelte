@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Board, coordsEqual, GridType, PieceType, type Space } from '$lib/puzzle/Board';
+	import Button from '$lib/ui/Button.svelte';
 	import { confetti } from '@neoconfetti/svelte';
 
 	export let puzzleString: string;
@@ -303,8 +304,8 @@
 </div>
 
 <div class="actions">
-	<button disabled={moveStack.length < 2} on:click={undo}>Undo</button>
-	<button disabled={moveStack.length < 2} on:click={reset}>Reset</button>
+	<Button onClick={undo} disabled={moveStack.length < 2} icon="undo">Undo</Button>
+	<Button onClick={reset} disabled={moveStack.length < 2} icon="reset">Reset</Button>
 	Moves: {moveStack.length - 1}
 </div>
 
@@ -355,7 +356,7 @@
 		position: relative;
 	}
 
-	img {
+	.board img {
 		width: 75%;
 		height: 75%;
 		left: 12.5%;
@@ -363,7 +364,7 @@
 		position: absolute;
 		object-fit: contain;
 	}
-	img.invisible {
+	.board img.invisible {
 		opacity: 0;
 	}
 
