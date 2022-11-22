@@ -50,6 +50,9 @@
 					hiddenSpaces = [...hiddenSpaces, destination];
 				}
 				clearSelection();
+				if (board.isSolved()) {
+					localStorage.setItem(puzzleString, moveStack.length.toString());
+				}
 				board = board;
 				moveStack = [...moveStack, board.serialize()];
 				lastDestination = destination;
