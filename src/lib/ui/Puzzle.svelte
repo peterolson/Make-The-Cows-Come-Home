@@ -6,7 +6,7 @@
 
 	export let puzzleString: string;
 	export let nextLink: HTMLAnchorElement;
-	export let difficultyLink: string;
+	export let difficultyLink: HTMLAnchorElement;
 	export let difficultyName: string;
 	let board = Board.deserialize(puzzleString);
 

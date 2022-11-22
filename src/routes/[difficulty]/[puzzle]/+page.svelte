@@ -6,6 +6,7 @@
 
 	export let data: PageData;
 	export let nextLink: HTMLAnchorElement;
+	export let difficultyLink: HTMLAnchorElement;
 </script>
 
 <div class="column">
@@ -13,7 +14,7 @@
 		{data.title}
 		<slot slot="left">
 			<a href="/"><Button icon="home_page" /></a>
-			<a href="/{data.key}"><Button icon="menu" /></a>
+			<a href="/{data.key}" bind:this={difficultyLink}><Button icon="menu" /></a>
 			{#if data.prevPuzzle}
 				<a href="/{data.key}/{data.prevPuzzle}">
 					<Button icon="previous" />
@@ -33,7 +34,7 @@
 			<Puzzle
 				puzzleString={data.puzzleString}
 				{nextLink}
-				difficultyLink="/{data.key}"
+				{difficultyLink}
 				difficultyName={data.name}
 			/>
 		{/key}

@@ -7,7 +7,7 @@
 	export let userMoves: number;
 	export let bestMoves: number;
 	export let nextLink: HTMLAnchorElement;
-	export let difficultyLink: string;
+	export let difficultyLink: HTMLAnchorElement;
 	export let difficultyName: string;
 
 	const congratsTexts = [
@@ -52,7 +52,11 @@
 			{#if nextLink}
 				<Button icon="next" fullWidth onClick={() => nextLink.click()}>Next puzzle</Button>
 			{/if}
-			<a href={difficultyLink}><Button icon="menu" fullWidth>{difficultyName}</Button></a>
+			{#if difficultyLink}
+				<Button icon="menu" fullWidth onClick={() => difficultyLink.click()}>
+					{difficultyName}
+				</Button>
+			{/if}
 			<a href="/"><Button icon="home_page" fullWidth>Home</Button></a>
 		</div>
 	</div>
