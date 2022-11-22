@@ -33,7 +33,6 @@
 <div class="modal" in:fade on:click={hide} on:keyup={hide} class:hidden>
 	<div
 		class="modal-content"
-		in:fade={{ duration: 1000 }}
 		on:click={(e) => e.stopPropagation()}
 		on:keyup={(e) => e.stopPropagation()}
 	>
@@ -48,10 +47,10 @@
 			{/if}
 		</p>
 		<div class="links">
-			<Button icon="reset" onClick={onReset} fullWidth>Play again</Button>
 			{#if nextLink}
 				<Button icon="next" fullWidth onClick={() => nextLink.click()}>Next puzzle</Button>
 			{/if}
+			<Button icon="reset" onClick={onReset} fullWidth>Play again</Button>
 			{#if difficultyLink}
 				<Button icon="menu" fullWidth onClick={() => difficultyLink.click()}>
 					{difficultyName}

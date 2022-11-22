@@ -3,12 +3,16 @@
 	import Button from '$lib/ui/Button.svelte';
 	import { confetti } from '@neoconfetti/svelte';
 	import PuzzleFinished from './PuzzleFinished.svelte';
+	import PuzzleHint from './PuzzleHint.svelte';
 
 	export let puzzleString: string;
 	export let nextLink: HTMLAnchorElement;
 	export let difficultyLink: HTMLAnchorElement;
 	export let difficultyName: string;
+	export let hint: string;
+
 	let board = Board.deserialize(puzzleString);
+	let showHint = true;
 
 	let activeCell: { space: Space; button: HTMLButtonElement } | undefined;
 	let destinations: Space[] = [];
@@ -322,8 +326,15 @@
 <div class="actions">
 	<Button onClick={undo} disabled={moveStack.length < 2} icon="undo">Undo</Button>
 	<Button onClick={reset} disabled={moveStack.length < 2} icon="reset">Reset</Button>
+	{#if hint}
+		<Button onClick={() => (showHint = true)} icon="hint">Hint</Button>
+	{/if}
 	Moves: {moveStack.length - 1}
 </div>
+
+{#if hint && showHint}
+	<PuzzleHint {hint} onClose={() => (showHint = false)} />
+{/if}
 
 <style>
 	.cell {

@@ -36,6 +36,7 @@
 				{nextLink}
 				{difficultyLink}
 				difficultyName={data.name}
+				hint={data.hint}
 			/>
 		{/key}
 	</div>

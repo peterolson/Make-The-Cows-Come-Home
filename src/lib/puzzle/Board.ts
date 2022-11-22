@@ -193,7 +193,7 @@ export class Board {
 			return Math.min(width, height);
 		}
 		const width = totalWidth / (this.width + 0.5);
-		const height = totalHeight / this.height;
+		const height = totalHeight / (this.height + 0.5);
 		return Math.min(width, height);
 	}
 	getLeftOffset(totalWidth: number, totalHeight: number): number {
@@ -216,8 +216,8 @@ export class Board {
 		parentWidth: number | undefined,
 		parentHeight: number | undefined
 	): string {
-		const width = (parentWidth ? parentWidth : 8) - 8;
-		const height = parentHeight ? parentHeight : 0;
+		const width = (parentWidth ? parentWidth : typeof document !== "undefined" ? document.body.offsetWidth : 8) - 8;
+		const height = parentHeight ? parentHeight : typeof document !== "undefined" ? document.body.offsetHeight - 120 : 0
 		const pageAspectRatio = width / height;
 		const boardAspectRatio = this.width / this.height;
 
@@ -249,8 +249,7 @@ export class Board {
 			}
 		}
 		return (
-			`left: ${leftOffset + left}px; top: ${
-				topOffset + top
+			`left: ${leftOffset + left}px; top: ${topOffset + top
 			}px; width: ${spaceSize}px; height: ${spaceSize}px;` + addendum
 		);
 	}

@@ -14,6 +14,7 @@ export const load: PageLoad = ({ params }) => {
     const title = difficulty.prefix + (puzzleIndex + 1);
     const nextPuzzle = puzzleList[puzzleIndex + 1]?.board;
     const prevPuzzle = puzzleList[puzzleIndex - 1]?.board;
+    const hint = puzzleList[puzzleIndex]?.hint || '';
     return {
         ...difficulty,
         title,
@@ -21,5 +22,6 @@ export const load: PageLoad = ({ params }) => {
         nextPuzzle,
         prevPuzzle,
         index: puzzleIndex,
+        hint
     };
 }

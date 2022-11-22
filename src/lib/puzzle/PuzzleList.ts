@@ -1,47 +1,78 @@
 export const puzzles = [
 	{
 		difficulty: 'learn',
-		board: '1~R3|3|_O_____B_'
+		board: '1~R3|3|_O_____B_',
+		hint: "The object of the game is to make the cows come home.\n Click on the cow, then click on the barn to bring it home.",
 	},
 	{
 		difficulty: 'learn',
-		board: '2~R3|3|O_____B_O'
+		board: '4~R3|3|O__O__BOO',
+		hint: "If there is more than one cow, you have to bring all of them home.\n Cows can't jump over each other, so you have to move the cows closer to the home first.",
 	},
 	{
 		difficulty: 'learn',
-		board: '2~R3|4|P____B___O__'
+		board: '6~H3|3|_OOOBO_OO',
+		hint: "Some cows live in a hexagonal world.\n They also need to come home.",
 	},
 	{
 		difficulty: 'learn',
-		board: '3~R4|3|P__P___B__O_'
+		board: '2~R3|3|P____BO__',
+		hint: "Farmers can help guide the cows home.\n Click on the cow, then click on the farmer, then click on the barn.",
 	},
 	{
 		difficulty: 'learn',
-		board: '3~R3|3|O_O___BB_'
+		board: '6~H3|3|_P___POEB',
+		hint: "It's impossible travel through empty spaces.\n The cow needs to find a more indirect way to come home.",
 	},
 	{
 		difficulty: 'learn',
-		board: '2~R3|3|B__P_PO__'
+		board: '3~R3|3|P_P__B_O_',
+		hint: "Farmers can pull each other. \n One of the farmers will need to move to help the cow come home.",
 	},
 	{
 		difficulty: 'learn',
-		board: '4~R3|4|OP___B__PP_'
+		board: '3~R3|3|O_O___BB_',
+		hint: "Cows can also pull each other.",
 	},
 	{
 		difficulty: 'learn',
-		board: '3~R3|4|O____PP__B__'
+		board: '2~H3|3|_B_P_PO__',
+		hint: "The farmer will have to move out of the way to let the cow come home.",
 	},
 	{
 		difficulty: 'learn',
-		board: '4~R4|3|__P_O____B_P'
+		board: '4~R3|4|OP___B__PP_',
+		hint: "This cow will need the help of all the farmers to find its way home.",
 	},
 	{
 		difficulty: 'learn',
-		board: '4~R3|5|O_____O_B___P__'
+		board: '4~R3|2|PPHBOO',
+		hint: "Cows live in barns. Farmers live in houses.\n When you see a house, it means the farmers need to come home too.",
 	},
 	{
 		difficulty: 'learn',
-		board: '5~R4|3|O_O____BP__P'
+		board: '3~H4|3|H_O____B_P__',
+		hint: "Who should go home first, the cow or the farmer?",
+	},
+	{
+		difficulty: 'learn',
+		board: '3~R3|4|O____PP__B__',
+		hint: "Oh no, the farmer is blocking the cow! \n What can we do?"
+	},
+	{
+		difficulty: 'learn',
+		board: '6~R4|3|__P_O____B_P',
+		hint: "Farmers don't live in barns, but they can still move towards them.",
+	},
+	{
+		difficulty: 'learn',
+		board: '5~H4|3|OO_P____B__H',
+		hint: "Sometimes you need to be patient. \n Just because a cow can come home right away, doesn't mean it should.",
+	},
+	{
+		difficulty: 'learn',
+		board: '5~R4|3|O_O____BP__P',
+		hint: "I think you've got the hang of this now.\nIf you can solve this, you're ready for the next level.",
 	},
 	{
 		difficulty: 'easy',
