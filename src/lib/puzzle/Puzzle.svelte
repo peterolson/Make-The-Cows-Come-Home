@@ -311,7 +311,7 @@
 
 <style>
 	.cell {
-		background-color: #eee;
+		background-color: #fafafa;
 		position: absolute;
 		transition: background-color 0.5s;
 	}

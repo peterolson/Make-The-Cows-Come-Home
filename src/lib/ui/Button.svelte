@@ -28,7 +28,8 @@
 
 	button[disabled] {
 		cursor: not-allowed;
-		background-color: #ccc;
+		background-color: #85b6b6;
+		opacity: 0.5;
 	}
 
 	button img {
