@@ -12,13 +12,18 @@
 	--color-text: rgba(0, 0, 0, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+	--color-bg-easy: #0d6e21;
+	--color-bg-moderate: #c27100;
+	--color-bg-hard: #a30000;
+	--color-bg-insane: #080808;
+	--color-bg-none: #555;
 	font-family: var(--font-body);
 	color: var(--color-text);
 }
 
 body {
 	min-height: 100vh;
-	background-image: linear-gradient(rgb(145, 148, 156), rgb(114, 143, 169));
+	background-image: linear-gradient(rgb(233, 234, 236), rgb(203, 204, 205));
 	margin: 0;
 }
 

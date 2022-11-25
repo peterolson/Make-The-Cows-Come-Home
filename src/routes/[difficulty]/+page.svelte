@@ -19,10 +19,10 @@
 	<meta name="description" content="Puzzle game" />
 </svelte:head>
 
-<Header>
+<Header difficulty={data.key}>
 	{data.name}
 	<slot slot="left">
-		<a href="/"><Button icon="home_page" /></a>
+		<a href="/"><Button icon="home_page" inheritBackground /></a>
 	</slot>
 </Header>
 
@@ -71,6 +71,7 @@
 	h3 {
 		margin: 0;
 		font-size: medium;
+		color: rgba(0, 0, 0, 0.8);
 	}
 
 	.description {

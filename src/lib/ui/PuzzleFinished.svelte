@@ -2,6 +2,7 @@
 	import Button from './Button.svelte';
 	import Stars from './Stars.svelte';
 	import { fade, fly } from 'svelte/transition';
+	import type { DifficultyKey } from '$lib/puzzle/PuzzleListNames';
 
 	export let onReset: () => void;
 	export let userMoves: number;
@@ -9,6 +10,7 @@
 	export let nextLink: HTMLAnchorElement;
 	export let difficultyLink: HTMLAnchorElement;
 	export let difficultyName: string;
+	export let difficultyKey: DifficultyKey;
 
 	const congratsTexts = [
 		'Good job!',
@@ -48,15 +50,23 @@
 		</p>
 		<div class="links">
 			{#if nextLink}
-				<Button icon="next" fullWidth onClick={() => nextLink.click()}>Next puzzle</Button>
+				<Button icon="next" fullWidth onClick={() => nextLink.click()} difficulty={difficultyKey}
+					>Next puzzle</Button
+				>
 			{/if}
-			<Button icon="reset" onClick={onReset} fullWidth>Play again</Button>
+			<Button icon="reset" onClick={onReset} fullWidth difficulty={difficultyKey}>Play again</Button
+			>
 			{#if difficultyLink}
-				<Button icon="menu" fullWidth onClick={() => difficultyLink.click()}>
+				<Button
+					icon="menu"
+					fullWidth
+					onClick={() => difficultyLink.click()}
+					difficulty={difficultyKey}
+				>
 					{difficultyName}
 				</Button>
 			{/if}
-			<a href="/"><Button icon="home_page" fullWidth>Home</Button></a>
+			<a href="/"><Button icon="home_page" fullWidth difficulty={difficultyKey}>Home</Button></a>
 		</div>
 	</div>
 </div>

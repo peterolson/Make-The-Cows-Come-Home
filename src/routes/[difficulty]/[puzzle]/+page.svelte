@@ -10,21 +10,21 @@
 </script>
 
 <div class="column">
-	<Header>
+	<Header difficulty={data.key}>
 		{data.title}
 		<slot slot="left">
-			<a href="/"><Button icon="home_page" /></a>
-			<a href="/{data.key}" bind:this={difficultyLink}><Button icon="menu" /></a>
+			<a href="/"><Button icon="home_page" inheritBackground /></a>
+			<a href="/{data.key}" bind:this={difficultyLink}><Button icon="menu" inheritBackground /></a>
 			{#if data.prevPuzzle}
-				<a href="/{data.key}/{data.prevPuzzle}">
-					<Button icon="previous" />
+				<a href={data.prevPuzzle}>
+					<Button icon="previous" inheritBackground />
 				</a>
 			{/if}
 		</slot>
 		<slot slot="right">
 			{#if data.nextPuzzle}
-				<a href="/{data.key}/{data.nextPuzzle}" bind:this={nextLink}>
-					<Button icon="next" />
+				<a href={data.nextPuzzle} bind:this={nextLink}>
+					<Button icon="next" inheritBackground />
 				</a>
 			{/if}
 		</slot>
@@ -36,6 +36,7 @@
 				{nextLink}
 				{difficultyLink}
 				difficultyName={data.name}
+				difficultyKey={data.key}
 				hint={data.hint}
 			/>
 		{/key}

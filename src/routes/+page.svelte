@@ -20,25 +20,33 @@
 	<meta name="description" content="Puzzle game" />
 </svelte:head>
 
-<Header>Make the cows come home</Header>
+<Header difficulty="none">Make the cows come home</Header>
+<div class="images">
+	<img src="/img/cow.svg" alt="cow" />
+	<img src="/img/barn.svg" alt="barn" />
+	<img src="/img/home.svg" alt="home" />
+	<img src="/img/person.svg" alt="person" />
+</div>
 <div class="links">
 	{#each difficulties as difficulty}
 		{@const { total, solved, first } = getSolvedCount(difficulty.key)}
-		{#if difficulty.key === 'learn' && solved === 0}
-			<a href="/{difficulty.key}/{first.board}">
-				<h2>{difficulty.name}</h2>
-				<div class="description">Solved {solved} out of {total}</div>
-			</a>
-		{:else}
-			<a href="/{difficulty.key}">
-				<h2>{difficulty.name}</h2>
-				<div class="description">Solved {solved} out of {total}</div>
-			</a>
-		{/if}
+		{@const href =
+			difficulty.key === 'learn' && solved === 0
+				? `/${difficulty.key}/${first.board}`
+				: `/${difficulty.key}`}
+		<a {href} class={difficulty.key}>
+			<h2>{difficulty.name}</h2>
+			<div class="description">Solved {solved} out of {total}</div>
+		</a>
 	{/each}
 </div>
 
 <style>
+	.images {
+		margin: 16px auto;
+		margin-bottom: 0;
+		text-align: center;
+	}
 	.links {
 		display: flex;
 		flex-direction: column;
@@ -56,10 +64,11 @@
 		border-radius: 8px;
 		border: 1px solid rgba(0, 0, 0, 0.2);
 		text-decoration: none;
+		color: rgba(255, 255, 255, 0.85);
 	}
 
 	.links a:hover {
-		background-color: rgba(255, 255, 255, 0.4);
+		opacity: 0.8;
 	}
 
 	h2 {
@@ -69,6 +78,31 @@
 	}
 
 	.description {
-		color: rgba(0, 0, 0, 0.6);
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	a.learn {
+		background-color: var(--color-theme-1);
+	}
+
+	a.easy {
+		background-color: var(--color-bg-easy);
+	}
+
+	a.moderate {
+		background-color: var(--color-bg-moderate);
+	}
+
+	a.hard {
+		background-color: var(--color-bg-hard);
+	}
+
+	a.insane {
+		background-color: var(--color-bg-insane);
+	}
+
+	img {
+		width: 20%;
+		max-width: 100px;
 	}
 </style>

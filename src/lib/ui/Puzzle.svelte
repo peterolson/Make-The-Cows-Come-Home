@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Board, coordsEqual, GridType, PieceType, type Space } from '$lib/puzzle/Board';
+	import type { DifficultyKey } from '$lib/puzzle/PuzzleListNames';
 	import Button from '$lib/ui/Button.svelte';
 	import { confetti } from '@neoconfetti/svelte';
 	import PuzzleFinished from './PuzzleFinished.svelte';
@@ -10,6 +11,7 @@
 	export let difficultyLink: HTMLAnchorElement;
 	export let difficultyName: string;
 	export let hint: string;
+	export let difficultyKey: DifficultyKey;
 
 	let board = Board.deserialize(puzzleString);
 	let showHint = true;
@@ -300,6 +302,7 @@
 			{nextLink}
 			{difficultyLink}
 			{difficultyName}
+			{difficultyKey}
 		/>
 		<div
 			style="position: absolute; left: 50%; top: 0%"
@@ -324,10 +327,14 @@
 </div>
 
 <div class="actions">
-	<Button onClick={undo} disabled={moveStack.length < 2} icon="undo">Undo</Button>
-	<Button onClick={reset} disabled={moveStack.length < 2} icon="reset">Reset</Button>
+	<Button onClick={undo} disabled={moveStack.length < 2} icon="undo" difficulty={difficultyKey}
+		>Undo</Button
+	>
+	<Button onClick={reset} disabled={moveStack.length < 2} icon="reset" difficulty={difficultyKey}
+		>Reset</Button
+	>
 	{#if hint}
-		<Button onClick={() => (showHint = true)} icon="hint">Hint</Button>
+		<Button onClick={() => (showHint = true)} icon="hint" difficulty={difficultyKey}>Hint</Button>
 	{/if}
 	Moves: {moveStack.length - 1}
 </div>
@@ -409,9 +416,9 @@
 		align-items: center;
 		padding: 8px;
 		box-sizing: border-box;
+		width: 320px;
+		margin: 0 auto;
 		height: 52px;
-		margin-top: 4px;
-		background-color: var(--color-bg-0);
-		outline: 1px solid rgba(0, 0, 0, 0.3);
+		color: rgba(255, 255, 255, 0.85);
 	}
 </style>
