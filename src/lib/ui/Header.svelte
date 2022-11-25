@@ -36,7 +36,7 @@
 
 	header h1 {
 		font-size: 22px;
-		color: rgba(255, 255, 255, 0.95);
+		color: rgba(255, 255, 255, 1);
 	}
 
 	.learn {

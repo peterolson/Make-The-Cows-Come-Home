@@ -60,11 +60,11 @@
 		padding: 8px;
 		width: max(50%, 300px);
 		text-align: center;
-		background-color: rgba(255, 255, 255, 0.8);
+		background-color: rgba(255, 255, 255, 0.95);
 		border-radius: 8px;
 		border: 1px solid rgba(0, 0, 0, 0.2);
 		text-decoration: none;
-		color: rgba(255, 255, 255, 0.85);
+		color: rgba(255, 255, 255, 1);
 	}
 
 	.links a:hover {
@@ -78,7 +78,7 @@
 	}
 
 	.description {
-		color: rgba(255, 255, 255, 0.7);
+		color: rgba(255, 255, 255, 1);
 	}
 
 	a.learn {
