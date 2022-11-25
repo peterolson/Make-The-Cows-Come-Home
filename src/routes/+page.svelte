@@ -22,10 +22,10 @@
 
 <Header difficulty="none">Make the cows come home</Header>
 <div class="images">
-	<img src="/img/cow.svg" alt="cow" />
-	<img src="/img/barn.svg" alt="barn" />
-	<img src="/img/home.svg" alt="home" />
-	<img src="/img/person.svg" alt="person" />
+	<img src="/img/cow.svg" width="100" height="100" alt="cow" />
+	<img src="/img/barn.svg" width="100" height="100" alt="barn" />
+	<img src="/img/home.svg" width="100" height="100" alt="home" />
+	<img src="/img/person.svg" width="100" height="100" alt="person" />
 </div>
 <div class="links">
 	{#each difficulties as difficulty}
