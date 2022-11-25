@@ -16,7 +16,6 @@
 
 <svelte:head>
 	<title>{data.name}</title>
-	<meta name="description" content="Puzzle game" />
 </svelte:head>
 
 <Header difficulty={data.key}>

@@ -9,6 +9,10 @@
 	export let difficultyLink: HTMLAnchorElement;
 </script>
 
+<svelte:head>
+	<title>{data.title}</title>
+</svelte:head>
+
 <div class="column">
 	<Header difficulty={data.key}>
 		{data.title}
