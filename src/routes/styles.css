@@ -21,8 +21,12 @@
 	color: var(--color-text);
 }
 
+html,
 body {
-	min-height: 100vh;
+	height: 100%;
+}
+
+body {
 	background-image: linear-gradient(rgb(233, 234, 236), rgb(203, 204, 205));
 	margin: 0;
 }
