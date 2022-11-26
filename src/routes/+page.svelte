@@ -16,11 +16,11 @@
 </script>
 
 <svelte:head>
-	<title>Make the cows come home</title>
+	<title>Make the Cows Come Home</title>
 	<meta name="description" content="Puzzle game" />
 </svelte:head>
 
-<Header difficulty="none">Make the cows come home</Header>
+<Header difficulty="none">Make the Cows Come Home</Header>
 <div class="images">
 	<img src="/img/cow.svg" width="100" height="100" alt="cow" />
 	<img src="/img/barn.svg" width="100" height="100" alt="barn" />
