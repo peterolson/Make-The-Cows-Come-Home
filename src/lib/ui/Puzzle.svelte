@@ -3,6 +3,7 @@
 	import type { DifficultyKey } from '$lib/puzzle/PuzzleListNames';
 	import Button from '$lib/ui/Button.svelte';
 	import { confetti } from '@neoconfetti/svelte';
+	import { fade } from 'svelte/transition';
 	import PuzzleFinished from './PuzzleFinished.svelte';
 	import PuzzleHint from './PuzzleHint.svelte';
 	import { tap } from './tapEvent';

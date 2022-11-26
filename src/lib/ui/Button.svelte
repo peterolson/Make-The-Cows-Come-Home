@@ -2,7 +2,7 @@
 	import type { DifficultyKey } from '$lib/puzzle/PuzzleListNames';
 	import { tap } from './tapEvent';
 
-	export let onClick: () => void = () => {};
+	export let onClick: (() => void) | null = null;
 	export let disabled: boolean = false;
 	export let icon: string = '';
 	export let fullWidth: boolean = false;

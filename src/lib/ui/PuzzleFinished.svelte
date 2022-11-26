@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from './Button.svelte';
 	import Stars from './Stars.svelte';
-	import { fade, fly } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import type { DifficultyKey } from '$lib/puzzle/PuzzleListNames';
 
 	export let onReset: () => void;
@@ -32,7 +32,7 @@
 	}
 </script>
 
-<div class="modal" in:fade on:click={hide} on:keyup={hide} class:hidden>
+<div class="modal" in:fade={{ delay: 500 }} on:click={hide} on:keyup={hide} class:hidden>
 	<div
 		class="modal-content"
 		on:click={(e) => e.stopPropagation()}

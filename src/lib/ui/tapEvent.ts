@@ -1,7 +1,10 @@
 // .click() responds slowly on mobile devices, so we use .touchstart and .mousedown instead.
 // should only respond to one of touchstart/mousedown, but not both.
 
-export const tap = (node: HTMLElement, callback: (e: { target: HTMLElement }) => void) => {
+export const tap = (node: HTMLElement, callback: ((e: { target: HTMLElement }) => void) | null) => {
+	if (!callback) {
+		return;
+	}
 	node.addEventListener('mousedown', (e) => {
 		e.stopImmediatePropagation();
 		e.preventDefault();
