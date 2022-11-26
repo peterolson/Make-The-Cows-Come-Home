@@ -423,13 +423,13 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		gap: 16px;
+		gap: 8px;
 		align-items: center;
 		padding: 8px;
 		box-sizing: border-box;
 		width: 320px;
-		margin: 0 auto;
-		height: 52px;
+		margin: 20px auto;
+		height: 24px;
 		color: rgba(255, 255, 255, 0.85);
 	}
 </style>
