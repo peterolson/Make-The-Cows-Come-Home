@@ -428,8 +428,8 @@
 		padding: 8px;
 		box-sizing: border-box;
 		width: 320px;
-		margin: 20px auto;
-		height: 24px;
+		margin: 32px auto;
+		height: 20px;
 		color: rgba(255, 255, 255, 0.85);
 	}
 </style>
