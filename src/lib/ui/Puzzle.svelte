@@ -144,9 +144,9 @@
 		animatingElements.add(svgElement);
 		animatingElements.add(imgCopy);
 
-		const STEP_1_TIME = 200;
-		const STEP_2_TIME = 250;
-		const STEP_3_TIME = 50;
+		const STEP_1_TIME = 145;
+		const STEP_2_TIME = 200;
+		const STEP_3_TIME = 5;
 
 		const left2 = Math.min(x1, x2) + 'px';
 		const top2 = Math.min(y1, y2) + 'px';
