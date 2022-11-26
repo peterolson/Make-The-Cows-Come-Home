@@ -32,7 +32,7 @@
 	}
 </script>
 
-<div class="modal" in:fade={{ delay: 500 }} on:click={hide} on:keyup={hide} class:hidden>
+<div class="modal" in:fade={{ delay: 150 }} on:click={hide} on:keyup={hide} class:hidden>
 	<div
 		class="modal-content"
 		on:click={(e) => e.stopPropagation()}

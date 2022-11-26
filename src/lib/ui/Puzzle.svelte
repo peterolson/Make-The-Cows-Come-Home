@@ -146,7 +146,6 @@
 
 		const STEP_1_TIME = 145;
 		const STEP_2_TIME = 200;
-		const STEP_3_TIME = 5;
 
 		const left2 = Math.min(x1, x2) + 'px';
 		const top2 = Math.min(y1, y2) + 'px';
@@ -189,13 +188,15 @@
 					left: left2,
 					top: top2,
 					width: width2,
-					height: height2
+					height: height2,
+					opacity: 1
 				},
 				{
 					left: left3,
 					top: top3,
 					width: width3,
-					height: height3
+					height: height3,
+					opacity: 0
 				}
 			],
 			{
@@ -207,6 +208,7 @@
 		svgElement.style.top = top3;
 		svgElement.style.width = width3;
 		svgElement.style.height = height3;
+		svgElement.style.opacity = '0';
 
 		// animate to destination over 1 second
 		const animation = imgCopy.animate(
@@ -237,7 +239,7 @@
 					}
 				],
 				{
-					duration: STEP_2_TIME + STEP_3_TIME,
+					duration: STEP_2_TIME,
 					easing: 'linear'
 				}
 			);
@@ -245,22 +247,6 @@
 		}
 
 		await animation.finished;
-
-		lineAnimation = svgElement.animate(
-			[
-				{
-					opactiy: 1
-				},
-				{
-					opacity: 0
-				}
-			],
-			{
-				duration: STEP_3_TIME,
-				easing: 'ease-in-out'
-			}
-		);
-		await lineAnimation.finished;
 
 		boardNode.removeChild(imgCopy);
 		boardNode.removeChild(svgElement);
