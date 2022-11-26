@@ -221,6 +221,29 @@
 		);
 		imgCopy.style.left = destinationLeft + 'px';
 		imgCopy.style.top = destinationTop + 'px';
+
+		if (destinationIndex === pullerIndex) {
+			// the image should fade out if going home
+			imgCopy.animate(
+				[
+					{
+						opacity: 1
+					},
+					{
+						opacity: 0.95
+					},
+					{
+						opacity: 0
+					}
+				],
+				{
+					duration: STEP_2_TIME + STEP_3_TIME,
+					easing: 'linear'
+				}
+			);
+			imgCopy.style.opacity = '0';
+		}
+
 		await animation.finished;
 
 		lineAnimation = svgElement.animate(
