@@ -5,6 +5,7 @@
 	import { confetti } from '@neoconfetti/svelte';
 	import PuzzleFinished from './PuzzleFinished.svelte';
 	import PuzzleHint from './PuzzleHint.svelte';
+	import { tap } from './tapEvent';
 
 	export let puzzleString: string;
 	export let nextLink: HTMLAnchorElement;
@@ -28,7 +29,7 @@
 	let boardWidth = 0;
 	let boardHeight = 0;
 
-	async function clickSpace(space: Space, button: HTMLButtonElement) {
+	async function clickSpace(space: Space, button: HTMLElement) {
 		if (lastDestination) {
 			const validMoves: { destination: Space; puller: Space }[] = board.getValidMovesFrom(
 				lastDestination.coords as any
@@ -79,7 +80,7 @@
 			clearSelection();
 			return;
 		}
-		activeCell = { space, button };
+		activeCell = { space, button: button as HTMLButtonElement };
 		destinations = validMoves.map((x) => x.destination);
 		pullers = validMoves.map((x) => x.puller);
 		lastDestination = undefined;
@@ -281,7 +282,7 @@
 			class:puller={pullers.some((x) => coordsEqual(x.coords, space.coords))}
 			class:destination={destinations.some((x) => coordsEqual(x.coords, space.coords))}
 			style={board.getCoordsCSS(space.coords, boardWidth, boardHeight)}
-			on:click={(e) => clickSpace(space, e.currentTarget)}
+			use:tap={(e) => clickSpace(space, e.target)}
 		>
 			{#if space.pieceType && space.pieceType !== PieceType.Empty}
 				<img

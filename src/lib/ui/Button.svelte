@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { DifficultyKey } from '$lib/puzzle/PuzzleListNames';
+	import { tap } from './tapEvent';
 
 	export let onClick: () => void = () => {};
 	export let disabled: boolean = false;
@@ -11,7 +12,7 @@
 
 <button
 	{disabled}
-	on:click={onClick}
+	use:tap={onClick}
 	class:full-width={fullWidth}
 	class:inherit-background={inheritBackground}
 	class={difficulty}
